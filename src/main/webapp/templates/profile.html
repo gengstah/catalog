@@ -1,0 +1,90 @@
+<section class="row" data-ng-controller="ProfileController">
+	<div class="page-header">
+		<h1>Profile</h1>
+	</div>
+	
+	<div class="alert alert-danger" role="alert" data-ng-show="borrowerSignUpErrors">
+		<p>Error(s) encountered:</p>
+		<ul>
+			<li data-ng-repeat="borrowerSignUpError in borrowerSignUpErrors track by $index"><span>{{ borrowerSignUpError.message }}</span></li>
+		</ul>
+	</div>
+	<div class="alert alert-info" role="alert">Fields with <span class="glyphicon glyphicon-asterisk form-control-feedback"></span> are required</div>
+	
+	<div class="page-header">
+		<h3>Profile details <small>and particulars</small></h3>
+	</div>
+	<div class="alert alert-success" role="alert" data-ng-show="profileUpdateSuccess">
+		<span class="glyphicon glyphicon-ok"></span> Profile saved!
+	</div>
+	<form name="profileUpdateForm" role="form" method="POST" data-ng-submit="updateProfile(profile)">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group has-feedback" 
+						data-ng-class="{ 'has-success' : profileUpdateForm.name.$valid, 'has-error' : profileUpdateForm.name.$invalid  }">
+					<label for="name">Name</label>
+					<input type="text" class="form-control" id="name" name="name" placeholder="Name" required="required" data-ng-model="profile.name" />
+					<span class="glyphicon glyphicon-asterisk form-control-feedback"></span>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group has-feedback"
+						data-ng-class="{ 'has-success' : profileUpdateForm.description.$valid, 'has-error' : profileUpdateForm.description.$invalid  }">
+					<label for="description">Description</label>
+					<textarea id="description" name="description" class="form-control" rows="3" placeholder="Tell us something about you" required="required" data-ng-model="profile.desc"></textarea>
+					<span class="glyphicon glyphicon-asterisk form-control-feedback"></span>
+				</div>
+			</div>
+		</div>
+
+		<div class="text-center">
+			<a href="#!/" class="btn btn-default">Cancel</a>
+			<button type="submit" class="btn btn-primary" 
+				ng-disabled="profileUpdateForm.$invalid">
+				Update
+			</button>
+		</div>
+	</form>
+	
+	<div class="page-header">
+		<div class="pull-right">
+			<button class="btn btn-primary">Add user</button>
+		</div>
+		<h3>User details <small>enquiry</small></h3>
+	</div>
+	<div class="list-group">
+		<a href="#" class="list-group-item" data-ng-repeat="user in profile.users | orderBy:username">
+			<h4 class="list-group-item-heading">
+				<span data-ng-bind="user.username">gengstah</span>
+				<span class="label" data-ng-bind="user.status" data-ng-class="{ 'label-primary' : user.status === 'ACTIVE', 'label-default' : user.status !== 'ACTIVE' }">ACTIVE</span>
+			</h4>
+			<p class="list-group-item-text">
+				<div class="pull-right">
+					<button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button>
+				</div>
+				<span data-ng-bind="user.userContact.firstName"></span> <span data-ng-bind="user.userContact.lastName"></span><br />
+				<span class="glyphicon glyphicon-phone"></span> <span data-ng-bind="user.userContact.phone1"></span><br />
+				<span class="glyphicon glyphicon-envelope"></span> <span data-ng-bind="user.userContact.email1"></span>
+			</p>
+		</a>
+	</div>
+
+	<div class="page-header">
+		<div class="pull-right">
+			<a href="#!/profile/contact" class="btn btn-primary">Add contact</a>
+		</div>
+		<h3>Contact details <small>enquiry</small></h3>
+	</div>
+	<div class="list-group">
+		<a href="#!/profile/contact/{{contact.id}}" class="list-group-item" data-ng-repeat="contact in profile.contacts | orderBy:username">
+			<h4 class="list-group-item-heading" data-ng-bind-template="{{contact.firstName}} {{contact.lastName}}">gengstah</h4>
+			<p class="list-group-item-text">
+				<div class="pull-right">
+					<button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button>
+				</div>
+				<span class="glyphicon glyphicon-phone"></span> <span data-ng-bind="contact.phone1"></span><br />
+				<span class="glyphicon glyphicon-envelope"></span> <span data-ng-bind="contact.email1"></span>
+			</p>
+		</a>
+	</div>
+</section>

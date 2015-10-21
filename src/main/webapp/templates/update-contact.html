@@ -1,0 +1,125 @@
+<section class="row" data-ng-controller="ContactController">
+	<div class="page-header">
+		<h1>Update contact</h1>
+	</div>
+
+	<div class="alert alert-danger" role="alert" data-ng-show="profileContactFormErrors">
+		<p>Error(s) encountered:</p>
+		<ul>
+			<li data-ng-repeat="profileContactFormError in profileContactFormErrors track by $index"><span>{{ profileContactFormError.message }}</span></li>
+		</ul>
+	</div>
+	<div class="alert alert-info" role="alert">Fields with <span class="glyphicon glyphicon-asterisk form-control-feedback"></span> are required</div>
+	<form name="updateProfileContactForm" role="form" method="POST" data-ng-submit="saveContact(contact)">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group has-feedback"
+						data-ng-class="{ 'has-success' : updateProfileContactForm.firstname.$valid, 'has-error' : updateProfileContactForm.firstname.$invalid }">
+					<label for="firstname">First name</label>
+					<input type="text" class="form-control" id="firstname" name="firstname" placeholder="First name" required="required" data-ng-model="contact.firstName" />
+					<span class="glyphicon glyphicon-asterisk form-control-feedback"></span>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group has-feedback"
+						data-ng-class="{ 'has-success' : updateProfileContactForm.lastname.$valid, 'has-error' : updateProfileContactForm.lastname.$invalid }">
+					<label for="lastname">Last name</label>
+					<input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last name" required="required" data-ng-model="contact.lastName" />
+					<span class="glyphicon glyphicon-asterisk form-control-feedback"></span>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group has-feedback"
+						data-ng-class="{ 'has-success' : updateProfileContactForm.addressLine1.$valid, 'has-error' : updateProfileContactForm.addressLine1.$invalid }">
+					<label for="addressLine1">Address Line 1</label>
+					<input type="text" class="form-control" id="addressLine1" name="addressLine1" placeholder="Address Line 1" required="required" data-ng-model="contact.contactAddress.addressLine1" />
+					<span class="glyphicon glyphicon-asterisk form-control-feedback"></span>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="addressLine2">Address Line 2</label>
+					<input type="text" class="form-control" id="addressLine2" placeholder="Address Line 2" data-ng-model="contact.contactAddress.addressLine2" />
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="form-group has-feedback"
+						data-ng-class="{ 'has-success' : updateProfileContactForm.city.$valid, 'has-error' : updateProfileContactForm.city.$invalid }">
+					<label for="city">City</label>
+					<input type="text" class="form-control" id="city" name="city" placeholder="City" required="required" data-ng-model="contact.contactAddress.city" />
+					<span class="glyphicon glyphicon-asterisk form-control-feedback"></span>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group has-feedback"
+						data-ng-class="{ 'has-success' : updateProfileContactForm.state.$valid, 'has-error' : updateProfileContactForm.state.$invalid }">
+					<label for="state">State</label>
+					<input type="text" class="form-control" id="state" name="state" placeholder="State" required="required" data-ng-model="contact.contactAddress.state" />
+					<span class="glyphicon glyphicon-asterisk form-control-feedback"></span>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group has-feedback"
+						data-ng-class="{ 'has-success' : updateProfileContactForm.zipcode.$valid, 'has-error' : updateProfileContactForm.zipcode.$invalid  }">
+					<label for="zipcode">Zip code</label>
+					<input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="Zip code" required="required" data-ng-model="contact.contactAddress.zipcode" />
+					<span class="glyphicon glyphicon-asterisk form-control-feedback"></span>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group has-feedback"
+						data-ng-class="{ 'has-success' : updateProfileContactForm.phone1.$valid, 'has-error' : updateProfileContactForm.phone1.$invalid  }">
+					<label for="phone1">Phone</label>
+					<input type="text" class="form-control" id="phone1" name="phone1" required="required" placeholder="Phone" data-ng-model="contact.phone1" />
+					<span class="glyphicon glyphicon-asterisk form-control-feedback"></span>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="phone2">Alternate Phone</label>
+					<input type="text" class="form-control" id="phone2" placeholder="Alternate Phone" data-ng-model="contact.phone2" />
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group has-feedback"
+						data-ng-class="{ 'has-success' : updateProfileContactForm.email1.$valid, 'has-error' : updateProfileContactForm.email1.$invalid  }">
+					<label for="email1">Email</label>
+					<input type="email" class="form-control" id="email1" name="email1" required="required" placeholder="Email" data-ng-model="contact.email1" />
+					<span class="glyphicon glyphicon-asterisk form-control-feedback"></span>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group"
+						data-ng-class="{ 'has-success' : updateProfileContactForm.email2.$valid && (contact.email2 !== undefined && contact.email2 !== null && contact.email2 !== ''), 'has-error' : updateProfileContactForm.email2.$invalid && (contact.email2 !== undefined || contact.email2 !== null || contact.email2 !== '') }">
+					<label for="email2">Alternate Email</label>
+					<input type="email" class="form-control" id="email2" name="email2" placeholder="Alternate Email" data-ng-model="contact.email2" />
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="timeToContact">Preferred time to contact</label>
+					<input type="text" class="form-control" id="timeToContact" placeholder="Preferred time to contact" data-ng-model="contact.preferedTime" />
+				</div>
+			</div>
+		</div>
+		
+		<div class="text-center">
+			<a href="#!/profile" class="btn btn-default">Cancel</a>
+			<button type="button" class="btn btn-danger" data-ng-click="deleteContact(contact)"><span class="glyphicon glyphicon-floppy-remove"></span> Delete contact</button>
+			<button type="submit" class="btn btn-primary" 
+				ng-disabled="updateProfileContactForm.$invalid">
+				<span class="glyphicon glyphicon-floppy-disk"></span> Save
+			</button>
+		</div>
+	</form>
+</section>

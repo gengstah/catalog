@@ -1,0 +1,36 @@
+<section class="row" data-ng-controller="HeaderController">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#!/">KCV Lending Administrator</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<nav class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li ui-route="/" ng-class="{active: $uiRoute}">
+					<a href="#!/">Home</a>
+				</li>
+				<li ui-route="/users" ng-class="{active: $uiRoute}">
+					<a href="#!/users">Users</a>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown" ng-if="isAuthenticated()">
+					<a href="" class="dropdown-toggle" data-toggle="dropdown"><span data-ng-bind="user.contact.email1">Geng</span> <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li>
+							<a href="" data-ng-click="logout()">Sign out</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav><!-- /.navbar-collapse -->
+	</div><!-- /.container-fluid -->
+</section>

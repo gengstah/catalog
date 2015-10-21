@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs" xmlns:sec="http://cxf.apache.org/configuration/security"
+	xmlns:interop="http://WSSec/wssec10" xmlns:cxf="http://cxf.apache.org/core"
+	xmlns:p="http://cxf.apache.org/policy"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+						http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+						http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd
+						http://cxf.apache.org/policy http://cxf.apache.org/schemas/policy.xsd
+						http://cxf.apache.org/configuration/security http://cxf.apache.org/schemas/configuration/security.xsd">
+	<cxf:bus>
+		<cxf:features>
+			<cxf:logging />
+		</cxf:features>
+	</cxf:bus>
+	
+	<bean id="userManager"
+		class="com.mfhsapp.kcvlending.api.UserManager" />
+	<bean id="lenderManager"
+		class="com.mfhsapp.kcvlending.api.LenderManager" />
+	<bean id="borrowerManager"
+		class="com.mfhsapp.kcvlending.api.BorrowerManager" />
+	<bean id="contactManager"
+		class="com.mfhsapp.kcvlending.api.ContactManager" />
+	<bean id="loanManager"
+		class="com.mfhsapp.kcvlending.api.LoanManager" />
+	<bean id="optionManager"
+		class="com.mfhsapp.kcvlending.api.OptionManager" />
+	<bean id="loanTemplateManager"
+		class="com.mfhsapp.kcvlending.api.LoanTemplateManager" />
+	<bean id="countyDetailManager"
+		class="com.mfhsapp.kcvlending.api.CountyDetailManager" />
+	<bean id="adminManager"
+		class="com.mfhsapp.kcvlending.api.AdminManager" />
+	<bean id="loanCriteriaManager"
+		class="com.mfhsapp.kcvlending.api.LoanCriteriaManager" />
+	<bean id="loanRequestManager"
+		class="com.mfhsapp.kcvlending.api.LoanRequestManager" />
+
+	<!-- Providers -->
+	<bean id="jsonProvider" class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider">
+		<property name="mapper">
+			<bean class="com.mfhsapp.kcvlending.hibernate.mapper.HibernateAwareObjectMapper"></bean>
+		</property>
+	</bean>
+	<bean id="kcvLendingExceptionHandler" 
+		class="com.mfhsapp.kcvlending.exception.KcvLendingServiceApiExceptionHandler" />
+	<bean id="dateParameterHandler" 
+		class="com.mfhsapp.kcvlending.handler.DateParameterHandler" />
+	<bean id="validationExceptionMapper" 
+		class="com.mfhsapp.kcvlending.exception.ValidationExceptionMapper" />
+	<bean id="corsFilter" 
+		class="org.apache.cxf.rs.security.cors.CrossOriginResourceSharingFilter"/>
+		
+	<!-- Features -->
+	<bean id="commonValidationFeature" class="org.apache.cxf.validation.BeanValidationFeature"/>
+	
+	<!-- 
+	<jaxrs:server id="UserManagerServer"
+		address="/user">
+		<jaxrs:serviceBeans>
+			<ref bean="userManager" />
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+			<ref bean="kcvLendingExceptionHandler" />
+			<ref bean="dateParameterHandler" />
+			<ref bean="validationExceptionMapper" />
+		</jaxrs:providers>
+		<jaxrs:features>
+			<ref bean="commonValidationFeature" />
+		</jaxrs:features>
+	</jaxrs:server>
+	
+	<jaxrs:server id="LenderManagerServer"
+		address="/lender">
+		<jaxrs:serviceBeans>
+			<ref bean="lenderManager" />
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+			<ref bean="kcvLendingExceptionHandler" />
+			<ref bean="dateParameterHandler" />
+			<ref bean="validationExceptionMapper" />
+		</jaxrs:providers>
+		<jaxrs:features>
+			<ref bean="commonValidationFeature" />
+		</jaxrs:features>
+	</jaxrs:server>
+	
+	<jaxrs:server id="BorrowerManagerServer"
+		address="/borrower">
+		<jaxrs:serviceBeans>
+			<ref bean="borrowerManager" />
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+			<ref bean="kcvLendingExceptionHandler" />
+			<ref bean="dateParameterHandler" />
+			<ref bean="validationExceptionMapper" />
+		</jaxrs:providers>
+		<jaxrs:features>
+			<ref bean="commonValidationFeature" />
+		</jaxrs:features>
+	</jaxrs:server>
+	
+	<jaxrs:server id="ContactManagerServer"
+		address="/contact">
+		<jaxrs:serviceBeans>
+			<ref bean="contactManager" />
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+			<ref bean="kcvLendingExceptionHandler" />
+			<ref bean="dateParameterHandler" />
+			<ref bean="validationExceptionMapper" />
+		</jaxrs:providers>
+		<jaxrs:features>
+			<ref bean="commonValidationFeature" />
+		</jaxrs:features>
+	</jaxrs:server>
+	
+	<jaxrs:server id="LoanManagerServer"
+		address="/loan">
+		<jaxrs:serviceBeans>
+			<ref bean="loanManager" />
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+			<ref bean="kcvLendingExceptionHandler" />
+			<ref bean="dateParameterHandler" />
+			<ref bean="validationExceptionMapper" />
+		</jaxrs:providers>
+		<jaxrs:features>
+			<ref bean="commonValidationFeature" />
+		</jaxrs:features>
+	</jaxrs:server>
+	
+	<jaxrs:server id="LoanTemplateManagerServer"
+		address="/loantemplate">
+		<jaxrs:serviceBeans>
+			<ref bean="loanTemplateManager" />
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+			<ref bean="kcvLendingExceptionHandler" />
+			<ref bean="dateParameterHandler" />
+			<ref bean="validationExceptionMapper" />
+		</jaxrs:providers>
+		<jaxrs:features>
+			<ref bean="commonValidationFeature" />
+		</jaxrs:features>
+	</jaxrs:server>
+	
+	<jaxrs:server id="OptionManagerServer"
+		address="/option">
+		<jaxrs:serviceBeans>
+			<ref bean="optionManager" />
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<ref bean="jsonProvider" />
+			<ref bean="kcvLendingExceptionHandler" />
+			<ref bean="dateParameterHandler" />
+			<ref bean="validationExceptionMapper" />
+		</jaxrs:providers>
+		<jaxrs:features>
+			<ref bean="commonValidationFeature" />
+		</jaxrs:features>
+	</jaxrs:server>
+	-->
+	<jaxrs:server id="ApplicationManagerServer"
+		address="/service">
+		<jaxrs:serviceBeans>
+			<ref bean="userManager" />
+			<ref bean="lenderManager" />
+			<ref bean="borrowerManager" />
+			<ref bean="contactManager" />
+			<ref bean="loanManager" />
+			<ref bean="loanTemplateManager" />
+			<ref bean="optionManager" />
+			<ref bean="countyDetailManager" />
+			<ref bean="adminManager" />
+			<ref bean="loanCriteriaManager"/>
+			<ref bean="loanRequestManager"/>
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<ref bean="corsFilter" />
+			<ref bean="jsonProvider" />
+			<ref bean="kcvLendingExceptionHandler" />
+			<ref bean="dateParameterHandler" />
+			<ref bean="validationExceptionMapper" />
+		</jaxrs:providers>
+		<jaxrs:features>
+			<ref bean="commonValidationFeature" />
+		</jaxrs:features>
+	</jaxrs:server>
+</beans>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="KCVLending" class="no-js lt-ie9 lt-ie8 lt-ie7" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="KCVLending" class="no-js lt-ie9 lt-ie8" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="KCVLending" class="no-js lt-ie9" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="KCVLending" class="no-js" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	<title>KCV Lending Administrator</title>
+	
+	<link href="../../dist/css/bootstrap.min.css" th:href="@{/dist/css/bootstrap.min.css}" rel="stylesheet" />
+	<link href="../../dist/css/bootstrap-responsive.min.css" th:href="@{/dist/css/bootstrap-responsive.min.css}" rel="stylesheet" />
+	<link href="../../dist/css/kcvlending.min.css" th:href="@{/dist/css/kcvlending.min.css}" rel="stylesheet" />
+	
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body data-ng-controller="ApplicationController" ng-cloak="ng-cloak" class="ng-cloak">
+
+	<!--[if lt IE 7]>
+		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+	
+	<div class="container">
+		
+		<header data-ng-include="menuUrl" class="navbar navbar-fixed-top navbar-inverse" data-ng-if="isAuthorized(userRoles.admin)"></header>
+		
+		<section data-ui-view=""></section>
+		
+		<footer>
+			<p class="pull-right">&copy; 2014 KCVLendingPlatform.com, Inc. All Rights Reserved</p>
+		</footer>
+		
+	</div>
+	
+	<script src="../../dist/js/jquery.min.js" th:src="@{/dist/js/jquery.min.js}" type="text/javascript"></script>
+	<script src="../../dist/js/highcharts.js" th:src="@{/dist/js/highcharts.js}" type="text/javascript"></script>
+	<script src="../../dist/js/exporting.js" th:src="@{/dist/js/exporting.js}" type="text/javascript"></script>
+	<script src="../../dist/js/bootstrap.min.js" th:src="@{/dist/js/bootstrap.min.js}" type="text/javascript"></script>
+	<script src="../../dist/js/angular.min.js" th:src="@{/dist/js/angular.min.js}" type="text/javascript"></script>
+	<script src="../../dist/js/angular-ui-router.min.js" th:src="@{/dist/js/angular-ui-router.min.js}" type="text/javascript"></script>
+	<script src="../../dist/js/angular-resource.min.js" th:src="@{/dist/js/angular-resource.min.js}" type="text/javascript"></script>
+	<script src="../../dist/js/angular-animate.min.js" th:src="@{/dist/js/angular-animate.min.js}" type="text/javascript"></script>
+	<script src="../../dist/js/angular-cookies.min.js" th:src="@{/dist/js/angular-cookies.min.js}" type="text/javascript"></script>
+	<script src="../../dist/js/ui-utils.min.js" th:src="@{/dist/js/ui-utils.min.js}" type="text/javascript"></script>
+	<script src="../../js/application.js" th:src="@{/js/application.js}" type="text/javascript"></script>
+	<script src="../../js/services.js" th:src="@{/js/services.js}" type="text/javascript"></script>
+	<script src="../../js/controllers.js" th:src="@{/js/controllers.js}" type="text/javascript"></script>
+	<script src="../../js/filters.js" th:src="@{/js/filters.js}" type="text/javascript"></script>
+	<script src="../../js/directives.js" th:src="@{/js/directives.js}" type="text/javascript"></script>
+</body>
+</html>

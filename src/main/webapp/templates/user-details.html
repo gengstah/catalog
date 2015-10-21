@@ -1,0 +1,85 @@
+<section data-ng-controller="UserDetailsController" data-ng-if="isAuthorized(userRoles.admin)">
+	<div class="row">
+		<div class="col-md-2">Email</div>
+		<div class="col-md-2" data-ng-bind="user.contact.email1"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-2">First Name</div>
+		<div class="col-md-2" data-ng-bind="user.firstName"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-2">Last Name</div>
+		<div class="col-md-2" data-ng-bind="user.lastName"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-2">Last Name</div>
+		<div class="col-md-2" data-ng-bind="user.lastName"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-2">Phone 1</div>
+		<div class="col-md-2" data-ng-bind="user.contact.phone1"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-2">Phone 2</div>
+		<div class="col-md-2" data-ng-bind="user.contact.phone2"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-2">Email 1</div>
+		<div class="col-md-2" data-ng-bind="user.contact.email1"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-2">Email 2</div>
+		<div class="col-md-2" data-ng-bind="user.contact.email2"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-2">Phone 1</div>
+		<div class="col-md-2" data-ng-bind="user.contact.phone1"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-2">Address Line 1</div>
+		<div class="col-md-2" data-ng-bind="user.contact.address.addressLine1"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-2">Address Line 2</div>
+		<div class="col-md-2" data-ng-bind="user.contact.address.addressLine2"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-2">City</div>
+		<div class="col-md-2" data-ng-bind="user.contact.address.city"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-2">State</div>
+		<div class="col-md-2" data-ng-bind="user.contact.address.state"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-2">Zip Code</div>
+		<div class="col-md-2" data-ng-bind="user.contact.address.zipcode"></div>
+	</div>
+	<div data-ng-if="user.userRole == 'ROLE_LENDER'">
+		<div class="row">
+			<div class="col-md-2">Lender Name</div>
+			<div class="col-md-2" data-ng-bind="user.lender.name"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">Lender Description</div>
+			<div class="col-md-2" data-ng-bind="user.lender.desc"></div>
+		</div>
+	</div>
+	<div data-ng-if="user.userRole == 'ROLE_BORROWER'">
+		<div class="row">
+			<div class="col-md-2">Borrower Name</div>
+			<div class="col-md-2" data-ng-bind="user.brokerBorrower.name"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">Borrower Description</div>
+			<div class="col-md-2" data-ng-bind="user.brokerBorrower.desc"></div>
+		</div>
+	</div>
+	
+	<button type="button" class="btn btn-primary" data-ng-click="approveUser()" data-ng-if="user.status == 'PENDING_APPROVAL'">Approve user</button>
+	<button type="button" class="btn btn-primary" data-ng-click="rejectUser()" data-ng-if="user.status == 'PENDING_APPROVAL'">Reject user</button>
+	<button type="button" class="btn btn-primary" data-ng-click="disableUser()" data-ng-if="user.status == 'ACTIVE'">Disable user</button>
+	<button type="button" class="btn btn-primary" data-ng-click="deleteUser()" data-ng-if="user.status == 'DISABLED' || user.status == 'ACTIVE'">Delete user</button>
+	<button type="button" class="btn btn-primary" data-ng-click="approveUser()" data-ng-if="user.status == 'DISABLED'">Activate user</button>
+	<button type="button" class="btn btn-primary" data-ng-click="back()">Back</button>
+</section>

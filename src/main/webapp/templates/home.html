@@ -1,0 +1,13 @@
+<section class="row" data-ng-controller="HomeController">
+	<form class="form-signin" role="form" ng-if="!isAuthenticated()" method="POST" data-ng-submit="login(credentials)" novalidate="novalidate">
+		<h2 class="form-signin-heading">Please sign in</h2>
+		<label for="username" class="sr-only">Email</label>
+		<input type="text" class="form-control" id="email" name="email" placeholder="Email" required="required" autofocus="autofocus" data-ng-model="credentials.email">
+		<label for="password" class="sr-only">Password</label>
+		<input type="password" class="form-control" id="password" name="password" placeholder="Password" required="required" data-ng-model="credentials.password">
+		
+		<button type="submit" class="btn btn-lg btn-primary btn-block">Sign in</button>
+	</form>
+	
+	<h1 ng-if="isAuthenticated()">Home</h1>
+</section>

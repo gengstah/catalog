@@ -1,0 +1,74 @@
+<section class="row" data-ng-controller="UserController">
+	<div class="row">
+		<div class="col-md-7">
+			<div class="page-header">
+				<h3>Pending Users</h3>
+			</div>
+			<p><span data-ng-bind="pendingUsers.length">28</span> pending user/s found</p>
+			<div class="list-group">
+				<a href="" class="list-group-item" data-ng-repeat="user in pendingUsers" data-ng-click="showUserDetails(user)">
+					<h4 class="list-group-item-heading">User {{user.username}} ({{user.userRole}})</h4>
+					<p class="list-group-item-text">
+						{{user.firstName}} {{user.lastName}}<br />
+						<span data-ng-if="user.userRole == 'ROLE_LENDER'">
+							{{user.lender.name}}<br />
+							{{user.lender.desc}}
+						</span>
+						<span data-ng-if="user.userRole == 'ROLE_BORROWER'">
+							{{user.brokerBorrower.name}}<br />
+							{{user.brokerBorrower.desc}}
+						</span>
+					</p>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-7">
+			<div class="page-header">
+				<h3>Disabled Users</h3>
+			</div>
+			<p><span data-ng-bind="disabledUsers.length">28</span> disabled user/s found</p>
+			<div class="list-group">
+				<a href="" class="list-group-item" data-ng-repeat="user in disabledUsers" data-ng-click="showUserDetails(user)">
+					<h4 class="list-group-item-heading">User {{user.username}} ({{user.userRole}})</h4>
+					<p class="list-group-item-text">
+						{{user.firstName}} {{user.lastName}}<br />
+						<span data-ng-if="user.userRole == 'ROLE_LENDER'">
+							{{user.lender.name}}<br />
+							{{user.lender.desc}}
+						</span>
+						<span data-ng-if="user.userRole == 'ROLE_BORROWER'">
+							{{user.brokerBorrower.name}}<br />
+							{{user.brokerBorrower.desc}}
+						</span>
+					</p>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-7">
+			<div class="page-header">
+				<h3>Active Users</h3>
+			</div>
+			<p><span data-ng-bind="activeUsers.length">28</span> active user/s found</p>
+			<div class="list-group">
+				<a href="" class="list-group-item" data-ng-repeat="user in activeUsers" data-ng-click="showUserDetails(user)">
+					<h4 class="list-group-item-heading">User {{user.username}} ({{user.userRole}})</h4>
+					<p class="list-group-item-text">
+						{{user.firstName}} {{user.lastName}}<br />
+						<span data-ng-if="user.userRole == 'ROLE_LENDER'">
+							{{user.lender.name}}<br />
+							{{user.lender.desc}}
+						</span>
+						<span data-ng-if="user.userRole == 'ROLE_BORROWER'">
+							{{user.brokerBorrower.name}}<br />
+							{{user.brokerBorrower.desc}}
+						</span>
+					</p>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>

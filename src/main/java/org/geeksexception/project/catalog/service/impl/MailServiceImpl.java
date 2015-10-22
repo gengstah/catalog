@@ -25,6 +25,7 @@ public class MailServiceImpl implements MailService {
 	
 	private @Inject JavaMailSender mailSender;
 	
+	@SuppressWarnings("unused")
 	private @Inject SimpleMailMessage template;
 	
 	private @Inject Environment env;

@@ -1,12 +1,14 @@
 package org.geeksexception.project.catalog.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -42,6 +44,9 @@ public class Car implements Serializable {
 	@Column(name = "ENGINE", nullable = false)
 	@NotEmpty(message = "Engine must not be empty")
 	private String engine;
+	
+	@ManyToMany(mappedBy = "compatibleCars")
+	private List<AutoPart> compatibleAutoParts;
 	
 	public Car(int year, String make, String model, String submodel, String engine) { }
 
@@ -91,6 +96,14 @@ public class Car implements Serializable {
 
 	public void setEngine(String engine) {
 		this.engine = engine;
+	}
+
+	public List<AutoPart> getCompatibleAutoParts() {
+		return compatibleAutoParts;
+	}
+
+	public void setCompatibleAutoParts(List<AutoPart> compatibleAutoParts) {
+		this.compatibleAutoParts = compatibleAutoParts;
 	}
 	
 }

@@ -39,11 +39,11 @@ public class MailServiceImpl implements MailService {
 			public void prepare(MimeMessage mimeMessage) throws Exception {
 				MimeMessageHelper message = new MimeMessageHelper(mimeMessage);
 				message.setTo("gerardpdelasarmas@gmail.com");
-				message.setSubject("KCV Loans");
+				message.setSubject("Catalog");
 				message.setFrom(env.getProperty("mail.username"));
 				Map<String, Object> model = new HashMap<String, Object>();
 				String text = VelocityEngineUtils.mergeTemplateIntoString(
-						velocityEngine, "mail-templates/kcv-email.html", "UTF-8",
+						velocityEngine, "mail-templates/catalog-email.html", "UTF-8",
 						model);
 				message.setText(text, true);
 			}

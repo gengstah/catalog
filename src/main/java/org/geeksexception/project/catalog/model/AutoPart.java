@@ -81,6 +81,12 @@ public class AutoPart implements Serializable {
 	@Column(name = "FILE_LOCATION", nullable = true)
 	private List<String> imageFileNames;
 	
+	@ManyToMany
+	@JoinTable(name = "AUTO_PART_CARS", 
+		joinColumns = {@JoinColumn(name="AUTO_PART_ID")},
+		inverseJoinColumns = {@JoinColumn(name="CAR_ID")})
+	private List<Car> compatibleCars;
+	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "FILE_LOCATION", nullable = false)
 	private Date dateAdded;
@@ -198,6 +204,14 @@ public class AutoPart implements Serializable {
 
 	public void setImageFileNames(List<String> imageFileNames) {
 		this.imageFileNames = imageFileNames;
+	}
+
+	public List<Car> getCompatibleCars() {
+		return compatibleCars;
+	}
+
+	public void setCompatibleCars(List<Car> compatibleCars) {
+		this.compatibleCars = compatibleCars;
 	}
 
 	public Date getDateAdded() {

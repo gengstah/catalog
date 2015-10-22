@@ -10,10 +10,10 @@ public interface CarService {
 	
 	List<String> retrieveMakesUsingYear(Integer year);
 	
-	List<String> retrieveModelsUsingMake(String make);
+	List<String> retrieveModelsUsingMake(Integer year, String make);
 	
-	List<String> retrieveSubmodelsUsingModel(String model);
+	List<String> retrieveSubmodelsUsingModel(Integer year, String make, String model);
 	
-	List<String> retrieveEnginesUsingSubmodel(String submodel);
+	List<String> retrieveEnginesUsingSubmodel(Integer year, String make, String model, String submodel);
 	
 }

@@ -31,23 +31,23 @@ public class CarServiceImpl implements CarService {
 	}
 
 	@Override
-	public List<String> retrieveModelsUsingMake(String make) {
+	public List<String> retrieveModelsUsingMake(Integer year, String make) {
 		
-		return carRepository.retrieveModelsUsingMake(make);
-		
-	}
-
-	@Override
-	public List<String> retrieveSubmodelsUsingModel(String model) {
-		
-		return carRepository.retrieveSubmodelsUsingModel(model);
+		return carRepository.retrieveModelsUsingMake(year, make);
 		
 	}
 
 	@Override
-	public List<String> retrieveEnginesUsingSubmodel(String submodel) {
+	public List<String> retrieveSubmodelsUsingModel(Integer year, String make, String model) {
 		
-		return carRepository.retrieveEnginesUsingSubmodel(submodel);
+		return carRepository.retrieveSubmodelsUsingModel(year, make, model);
+		
+	}
+
+	@Override
+	public List<String> retrieveEnginesUsingSubmodel(Integer year, String make, String model, String submodel) {
+		
+		return carRepository.retrieveEnginesUsingSubmodel(year, make, model, submodel);
 		
 	}
 

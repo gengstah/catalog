@@ -24,7 +24,7 @@ public abstract class AbstractDataConfig {
 		
 		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
 		factory.setJpaVendorAdapter(vendorAdapter);
-		factory.setPackagesToScan("com.mfhsapp.kcvlending.model");
+		factory.setPackagesToScan("org.geeksexception.project.catalog.model");
 		factory.setJpaProperties(additionalProperties());
 		factory.setDataSource(dataSource());
 		factory.afterPropertiesSet();

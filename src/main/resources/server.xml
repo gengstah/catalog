@@ -11,61 +11,31 @@
 						http://cxf.apache.org/policy http://cxf.apache.org/schemas/policy.xsd
 						http://cxf.apache.org/configuration/security http://cxf.apache.org/schemas/configuration/security.xsd">
 	
-	<bean id="userManager"
-		class="com.mfhsapp.kcvlending.api.UserManager" />
-	<bean id="lenderManager"
-		class="com.mfhsapp.kcvlending.api.LenderManager" />
-	<bean id="borrowerManager"
-		class="com.mfhsapp.kcvlending.api.BorrowerManager" />
-	<bean id="contactManager"
-		class="com.mfhsapp.kcvlending.api.ContactManager" />
-	<bean id="loanManager"
-		class="com.mfhsapp.kcvlending.api.LoanManager" />
-	<bean id="optionManager"
-		class="com.mfhsapp.kcvlending.api.OptionManager" />
-	<bean id="loanTemplateManager"
-		class="com.mfhsapp.kcvlending.api.LoanTemplateManager" />
-	<bean id="countyDetailManager"
-		class="com.mfhsapp.kcvlending.api.CountyDetailManager" />
-	<bean id="adminManager"
-		class="com.mfhsapp.kcvlending.api.AdminManager" />
-	<bean id="loanCriteriaManager"
-		class="com.mfhsapp.kcvlending.api.LoanCriteriaManager" />
-	<bean id="loanRequestManager"
-		class="com.mfhsapp.kcvlending.api.LoanRequestManager" />
+	<bean id="carManager"
+		class="org.geeksexception.project.catalog.api.CarManager" />
 
 	<!-- Providers -->
 	<bean id="jsonProvider" class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider">
 		<property name="mapper">
-			<bean class="com.mfhsapp.kcvlending.hibernate.mapper.HibernateAwareObjectMapper"></bean>
+			<bean class="org.geeksexception.project.catalog.hibernate.mapper.HibernateAwareObjectMapper"></bean>
 		</property>
 	</bean>
-	<bean id="kcvLendingExceptionHandler" 
-		class="com.mfhsapp.kcvlending.exception.KcvLendingServiceApiExceptionHandler" />
+	<bean id="catalogExceptionHandler" 
+		class="org.geeksexception.project.catalog.exception.CatalogServiceApiExceptionHandler" />
 	<bean id="dateParameterHandler" 
-		class="com.mfhsapp.kcvlending.handler.DateParameterHandler" />
+		class="org.geeksexception.project.catalog.handler.DateParameterHandler" />
 	<bean id="validationExceptionMapper" 
-		class="com.mfhsapp.kcvlending.exception.ValidationExceptionMapper" />
+		class="org.geeksexception.project.catalog.exception.ValidationExceptionMapper" />
 	<bean id="corsFilter" 
 		class="org.apache.cxf.rs.security.cors.CrossOriginResourceSharingFilter"/>
-	
+		
 	<!-- Features -->
 	<bean id="commonValidationFeature" class="org.apache.cxf.validation.BeanValidationFeature"/>
 	
 	<jaxrs:server id="ApplicationManagerServer"
 		address="/service">
 		<jaxrs:serviceBeans>
-			<ref bean="userManager" />
-			<ref bean="lenderManager" />
-			<ref bean="borrowerManager" />
-			<ref bean="contactManager" />
-			<ref bean="loanManager" />
-			<ref bean="loanTemplateManager" />
-			<ref bean="optionManager" />
-			<ref bean="countyDetailManager" />
-			<ref bean="adminManager" />
-			<ref bean="loanCriteriaManager"/>
-			<ref bean="loanRequestManager"/>
+			<ref bean="carManager" />
 		</jaxrs:serviceBeans>
 		<jaxrs:providers>
 			<ref bean="corsFilter" />

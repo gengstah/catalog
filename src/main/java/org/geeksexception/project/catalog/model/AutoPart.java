@@ -51,6 +51,10 @@ public class AutoPart implements Serializable {
 	@NotEmpty(message = "Quantity sold must not be empty")
 	private String quantitySold;
 	
+	@Column(name = "QUANTITY", nullable = false)
+	@NotNull(message = "Quantity must not be null")
+	private Integer quantity;
+	
 	@Column(name = "ANTICIPATED_SHIP_OUT_TIME_MIN", nullable = true)
 	private Integer anticipatedShipOutTimeMinimumDays;
 	
@@ -140,6 +144,14 @@ public class AutoPart implements Serializable {
 
 	public void setQuantitySold(String quantitySold) {
 		this.quantitySold = quantitySold;
+	}
+
+	public Integer getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
 	}
 
 	public Integer getAnticipatedShipOutTimeMinimumDays() {

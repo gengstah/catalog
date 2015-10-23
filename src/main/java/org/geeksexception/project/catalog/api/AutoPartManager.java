@@ -28,7 +28,7 @@ public class AutoPartManager {
 	@Produces(MediaType.APPLICATION_JSON_VALUE)
 	public AutoPart saveAutoPart(@NotNull @Valid AutoPart autoPart) {
 		
-		return autoPartService.saveAutoPart(autoPart);
+		return autoPartService.save(autoPart);
 		
 	}
 	
@@ -39,6 +39,7 @@ public class AutoPartManager {
 	public List<AutoPart> findAutoPartsBySectionAndCar(@NotNull @PathParam("carId") Long carId, @NotNull @PathParam("sectionId") Long sectionId) {
 		
 		return autoPartService.findAutoPartsBySectionAndCar(carId, sectionId);
+		
 	}
 	
 }

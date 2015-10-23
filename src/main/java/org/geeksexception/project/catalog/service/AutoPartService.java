@@ -6,7 +6,7 @@ import org.geeksexception.project.catalog.model.AutoPart;
 
 public interface AutoPartService {
 	
-	AutoPart saveAutoPart(AutoPart autoPart);
+	AutoPart save(AutoPart autoPart);
 	
 	List<AutoPart> findAutoPartsBySectionAndCar(Long carId, Long sectionId);
 	

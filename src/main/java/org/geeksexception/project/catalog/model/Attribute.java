@@ -16,7 +16,7 @@ public class Attribute implements Serializable {
 	private static final long serialVersionUID = -7080541247557812019L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.TABLE)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "ATTRIBUTE_ID", nullable = false)
 	private Long id;
 	

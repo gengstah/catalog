@@ -24,11 +24,11 @@ public class User implements Serializable {
 	private static final long serialVersionUID = -8574945399998006362L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.TABLE)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "USER_ID", nullable = false)
 	private Long id;
 	
-	@Column(name = "USER_ID", nullable = false)
+	@Column(name = "USERNAME", nullable = false)
 	@NotEmpty(message = "username must not be empty")
 	@Size(min = 5, message = "username must consist of at least 5 characters")
 	private String username;

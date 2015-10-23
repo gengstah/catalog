@@ -33,7 +33,7 @@ public class AutoPart implements Serializable {
 	private static final long serialVersionUID = 1153982262969808841L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.TABLE)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "AUTO_PART_ID", nullable = false)
 	private Long id;
 	
@@ -92,18 +92,18 @@ public class AutoPart implements Serializable {
 	private List<Car> compatibleCars;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "FILE_LOCATION", nullable = false)
+	@Column(name = "DATE_ADDED", nullable = false)
 	private Date dateAdded;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "FILE_LOCATION", nullable = true)
+	@Column(name = "DATE_APPROVED", nullable = true)
 	private Date dateApproved;
 	
 	public AutoPart() { }
 	
 	@PrePersist
 	public void prePersist() {
-		setDateAdded(new Date());
+		this.dateAdded = new Date();
 	}
 
 	public Long getId() {

@@ -20,7 +20,7 @@ public class AutoPartServiceImpl implements AutoPartService {
 	
 	@Override
 	@Transactional(readOnly = false)
-	public AutoPart saveAutoPart(AutoPart autoPart) {
+	public AutoPart save(AutoPart autoPart) {
 		// TODO: Implement adding of quantity if name and attributes are equal
 		return autoPartRepository.save(autoPart);
 		

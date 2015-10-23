@@ -13,6 +13,14 @@
 	
 	<bean id="carManager"
 		class="org.geeksexception.project.catalog.api.CarManager" />
+	<bean id="autoPartManager"
+		class="org.geeksexception.project.catalog.api.AutoPartManager" />
+	<bean id="headerManager"
+		class="org.geeksexception.project.catalog.api.HeaderManager" />
+	<bean id="sectionManager"
+		class="org.geeksexception.project.catalog.api.SectionManager" />
+	<bean id="userManager"
+		class="org.geeksexception.project.catalog.api.UserManager" />
 
 	<!-- Providers -->
 	<bean id="jsonProvider" class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider">
@@ -36,11 +44,15 @@
 		address="/service">
 		<jaxrs:serviceBeans>
 			<ref bean="carManager" />
+			<ref bean="autoPartManager" />
+			<ref bean="headerManager" />
+			<ref bean="sectionManager" />
+			<ref bean="userManager" />
 		</jaxrs:serviceBeans>
 		<jaxrs:providers>
 			<ref bean="corsFilter" />
 			<ref bean="jsonProvider" />
-			<ref bean="kcvLendingExceptionHandler" />
+			<ref bean="catalogExceptionHandler" />
 			<ref bean="dateParameterHandler" />
 			<ref bean="validationExceptionMapper" />
 		</jaxrs:providers>

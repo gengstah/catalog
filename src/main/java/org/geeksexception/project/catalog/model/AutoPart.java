@@ -24,7 +24,6 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 import org.geeksexception.project.catalog.enums.AutoPartStatus;
-import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "AUTO_PART")
@@ -37,9 +36,6 @@ public class AutoPart implements Serializable {
 	@Column(name = "AUTO_PART_ID", nullable = false)
 	private Long id;
 	
-	@Column(name = "ITEM_NUMBER", nullable = true)
-	private String itemNumber;
-	
 	@Column(name = "DESCRIPTION", nullable = true)
 	private String description;
 	
@@ -47,19 +43,9 @@ public class AutoPart implements Serializable {
 	@Column(name = "STATUS", nullable = false)
 	private AutoPartStatus status;
 	
-	@Column(name = "QUANTITY_SOLD", nullable = false)
-	@NotEmpty(message = "Quantity sold must not be empty")
-	private String quantitySold;
-	
 	@Column(name = "QUANTITY", nullable = false)
 	@NotNull(message = "Quantity must not be null")
 	private Integer quantity;
-	
-	@Column(name = "ANTICIPATED_SHIP_OUT_TIME_MIN", nullable = true)
-	private Integer anticipatedShipOutTimeMinimumDays;
-	
-	@Column(name = "ANTICIPATED_SHIP_OUT_TIME_MAX", nullable = true)
-	private Integer anticipatedShipOutTimeMaximumDays;
 	
 	@Column(name = "LIST_PRICE", nullable = true)
 	private BigDecimal listPrice;
@@ -114,14 +100,6 @@ public class AutoPart implements Serializable {
 		this.id = id;
 	}
 
-	public String getItemNumber() {
-		return itemNumber;
-	}
-
-	public void setItemNumber(String itemNumber) {
-		this.itemNumber = itemNumber;
-	}
-
 	public String getDescription() {
 		return description;
 	}
@@ -138,36 +116,12 @@ public class AutoPart implements Serializable {
 		this.status = status;
 	}
 
-	public String getQuantitySold() {
-		return quantitySold;
-	}
-
-	public void setQuantitySold(String quantitySold) {
-		this.quantitySold = quantitySold;
-	}
-
 	public Integer getQuantity() {
 		return quantity;
 	}
 
 	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
-	}
-
-	public Integer getAnticipatedShipOutTimeMinimumDays() {
-		return anticipatedShipOutTimeMinimumDays;
-	}
-
-	public void setAnticipatedShipOutTimeMinimumDays(Integer anticipatedShipOutTimeMinimumDays) {
-		this.anticipatedShipOutTimeMinimumDays = anticipatedShipOutTimeMinimumDays;
-	}
-
-	public Integer getAnticipatedShipOutTimeMaximumDays() {
-		return anticipatedShipOutTimeMaximumDays;
-	}
-
-	public void setAnticipatedShipOutTimeMaximumDays(Integer anticipatedShipOutTimeMaximumDays) {
-		this.anticipatedShipOutTimeMaximumDays = anticipatedShipOutTimeMaximumDays;
 	}
 
 	public BigDecimal getListPrice() {

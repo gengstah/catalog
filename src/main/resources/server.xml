@@ -21,7 +21,9 @@
 		class="org.geeksexception.project.catalog.api.SectionManager" />
 	<bean id="userManager"
 		class="org.geeksexception.project.catalog.api.UserManager" />
-
+	<bean id="attributeManager"
+		class="org.geeksexception.project.catalog.api.AttributeManager" />
+	
 	<!-- Providers -->
 	<bean id="jsonProvider" class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider">
 		<property name="mapper">
@@ -48,6 +50,7 @@
 			<ref bean="headerManager" />
 			<ref bean="sectionManager" />
 			<ref bean="userManager" />
+			<ref bean="attributeManager" />
 		</jaxrs:serviceBeans>
 		<jaxrs:providers>
 			<ref bean="corsFilter" />

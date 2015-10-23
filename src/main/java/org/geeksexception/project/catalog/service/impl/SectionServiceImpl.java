@@ -25,4 +25,11 @@ public class SectionServiceImpl implements SectionService {
 		
 	}
 
+	@Override
+	public List<String> findAllDistinctSectionName() {
+		
+		return sectionRepository.findAllDistinctSectionName();
+		
+	}
+
 }

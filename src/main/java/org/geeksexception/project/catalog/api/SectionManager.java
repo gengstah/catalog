@@ -24,6 +24,15 @@ public class SectionManager {
 	@GET
 	@Consumes(MediaType.APPLICATION_JSON_VALUE)
 	@Produces(MediaType.APPLICATION_JSON_VALUE)
+	public List<String> findAllDistinctSectionName() {
+		
+		return sectionService.findAllDistinctSectionName();
+		
+	}
+	
+	@GET
+	@Consumes(MediaType.APPLICATION_JSON_VALUE)
+	@Produces(MediaType.APPLICATION_JSON_VALUE)
 	@Path("/{headerId}")
 	public List<Section> findSectionsByHeader(@NotNull @PathParam("headerId") Long headerId) {
 		

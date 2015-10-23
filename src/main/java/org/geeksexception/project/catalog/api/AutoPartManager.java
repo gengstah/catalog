@@ -23,6 +23,15 @@ public class AutoPartManager {
 	
 	public AutoPartManager() { }
 	
+	@GET
+	@Consumes(MediaType.APPLICATION_JSON_VALUE)
+	@Produces(MediaType.APPLICATION_JSON_VALUE)
+	public List<String> findAllDistinctAutoPartName() {
+		
+		return autoPartService.findAllDistinctAutoPartName();
+		
+	}
+	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON_VALUE)
 	@Produces(MediaType.APPLICATION_JSON_VALUE)

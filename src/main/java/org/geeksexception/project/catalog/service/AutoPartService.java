@@ -10,4 +10,6 @@ public interface AutoPartService {
 	
 	List<AutoPart> findAutoPartsBySectionAndCar(Long carId, Long sectionId);
 	
+	List<String> findAllDistinctAutoPartName();
+	
 }

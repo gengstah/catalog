@@ -33,4 +33,11 @@ public class AutoPartServiceImpl implements AutoPartService {
 		
 	}
 
+	@Override
+	public List<String> findAllDistinctAutoPartName() {
+		
+		return autoPartRepository.findAllDistinctAutoPartName();
+		
+	}
+
 }

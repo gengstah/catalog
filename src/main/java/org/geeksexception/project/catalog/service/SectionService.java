@@ -8,4 +8,6 @@ public interface SectionService {
 	
 	List<Section> findSectionsByHeader(Long headerId);
 	
+	List<String> findAllDistinctSectionName();
+	
 }

@@ -24,6 +24,7 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 import org.geeksexception.project.catalog.enums.AutoPartStatus;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "AUTO_PART")
@@ -35,6 +36,10 @@ public class AutoPart implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "AUTO_PART_ID", nullable = false)
 	private Long id;
+	
+	@Column(name = "NAME", nullable = false)
+	@NotEmpty(message = "Name must not be empty")
+	private String name;
 	
 	@Column(name = "DESCRIPTION", nullable = true)
 	private String description;
@@ -98,6 +103,14 @@ public class AutoPart implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getDescription() {

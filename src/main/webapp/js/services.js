@@ -35,13 +35,15 @@ services.factory('Attribute', ['$resource',
  				method: 'GET',
  				params: { 
 					path: 'part'
-				}
+				},
+				isArray: true
  			},
  			findDefaultAttributesOfSection: {
  				method: 'GET',
  				params: { 
 					path: 'section'
-				}
+				},
+				isArray: true
  			}
  		});
  	}

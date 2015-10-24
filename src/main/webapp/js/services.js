@@ -4,15 +4,48 @@
 
 var services = angular.module('CatalogServices', ['ngResource']);
 
+services.factory('Header', ['$resource', 
+	function($resource) {
+		return $resource('/api/service/header');
+ 	}
+]);
+
 services.factory('Section', ['$resource', 
 	function($resource) {
-		return $resource('/api/service/section/:header', {}, {
-			findSectionOfHeader: { 
-				method: 'GET'
-			}
-		});
+		return $resource('/api/service/section/:header');
 	}
 ]);
+
+services.factory('Car', ['$resource', 
+	function($resource) {
+		return $resource('/api/service/car/:year/:make/:model/:submodel/:engine');
+	}
+]);
+
+services.factory('AutoPart', ['$resource', 
+	function($resource) {
+		return $resource('/api/service/part/:section/:car');
+ 	}
+]);
+
+services.factory('Attribute', ['$resource', 
+ 	function($resource) {
+ 		return $resource('/api/service/attr/:path/:id', {}, {
+ 			findAttributesByAutoPart: { 
+ 				method: 'GET',
+ 				params: { 
+					path: 'part'
+				}
+ 			},
+ 			findDefaultAttributesOfSection: {
+ 				method: 'GET',
+ 				params: { 
+					path: 'section'
+				}
+ 			}
+ 		});
+ 	}
+ ]);
 
 services.factory('AuthService', ['Session',
 	function (Session) {

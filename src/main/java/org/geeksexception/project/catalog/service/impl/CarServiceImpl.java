@@ -24,30 +24,9 @@ public class CarServiceImpl implements CarService {
 	}
 
 	@Override
-	public List<String> retrieveMakesUsingYear(Integer year) {
+	public List<Car> findAllCars() {
 		
-		return carRepository.retrieveMakesUsingYear(year);
-		
-	}
-
-	@Override
-	public List<String> retrieveModelsUsingMake(Integer year, String make) {
-		
-		return carRepository.retrieveModelsUsingMake(year, make);
-		
-	}
-
-	@Override
-	public List<String> retrieveSubmodelsUsingModel(Integer year, String make, String model) {
-		
-		return carRepository.retrieveSubmodelsUsingModel(year, make, model);
-		
-	}
-
-	@Override
-	public List<String> retrieveEnginesUsingSubmodel(Integer year, String make, String model, String submodel) {
-		
-		return carRepository.retrieveEnginesUsingSubmodel(year, make, model, submodel);
+		return carRepository.findAllCars();
 		
 	}
 

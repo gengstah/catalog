@@ -10,17 +10,14 @@ angular.module('Catalog', [
 	'CatalogDirectives',
 	'CatalogControllers'
 ]).
-config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', 'USER_ROLES', 
-	function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, roles) {
+config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', 
+	function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 		$urlRouterProvider.otherwise("/");
 
 		$stateProvider
 			.state('home', {
 				url: '/', 
-				templateUrl: 'templates/home.html',
-				data: {
-					authorizedRoles: [roles.all]
-				}
+				templateUrl: 'templates/home.html'
 			});
 		
 		$locationProvider.hashPrefix('!');
@@ -30,27 +27,11 @@ config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvi
 		}]);
 	}
 ]).
-run(['$rootScope', 'AUTH_EVENTS', 'AuthService', 'USER_ROLES', 'Auth', 'Session',
-		function($rootScope, events, AuthService, roles, Auth, Session) {
-	Auth.get(function(user) {
-		if(user != null) {
-			Session.create(user);
-			$rootScope.$broadcast(events.loginSuccess);
-		}
-	});
-
-	$rootScope.$on('$stateChangeStart', function (event, next) {
-		var authorizedRoles = next.data.authorizedRoles;
-		if (authorizedRoles.indexOf(roles.all) === -1 && !AuthService.isAuthorized(authorizedRoles)) {
-			event.preventDefault();
-			if (AuthService.isAuthenticated()) {
-				$rootScope.$broadcast(events.notAuthorized);
-			} else {
-				$rootScope.$broadcast(events.notAuthenticated);
-			}
-		}
-	});
-}]).
+run(['$rootScope',
+	function($rootScope) {
+		
+	}
+]).
 constant('USER_ROLES', {
 	all: '*',
 	admin: 'ROLE_ADMIN',

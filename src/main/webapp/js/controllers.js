@@ -4,9 +4,13 @@
 
 var controllers = angular.module('CatalogControllers', []);
 
-controllers.controller('ApplicationController', ['$scope', '$state',
-	function($scope, $state) {
+controllers.controller('ApplicationController', ['$scope', '$state', 'Car',
+	function($scope, $state, Car) {
+		var cars = Car.query();
+		console.log("%cCarManager#findAllCars: %O", "color: blue", cars);
 		
+		var car = Car.get({year: 1993, make: 'Nissan', model: 'Sentra', submodel: 'SE', engine: '4 Cyl 1.6L'});
+		console.log("%cCarManager#findCar: %O", "color: blue", car);
 	}
 ]);
 
@@ -15,9 +19,3 @@ controllers.controller('HomeController', ['$scope', '$rootScope',
 		
 	}
 ]);
-	
-controllers.controller('HeaderController', ['$scope', '$rootScope', 'AUTH_EVENTS', function($scope, $rootScope, events) {
-	$scope.logout = function logout() {
-		$rootScope.$broadcast(events.logoutSuccess);
-	};
-}]);

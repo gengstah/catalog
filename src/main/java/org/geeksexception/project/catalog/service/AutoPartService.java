@@ -8,7 +8,7 @@ public interface AutoPartService {
 	
 	AutoPart save(AutoPart autoPart);
 	
-	List<AutoPart> findAutoPartsBySectionAndCar(Long carId, Long sectionId);
+	List<AutoPart> findAutoPartsBySectionAndCar(Long carId, Long sectionId, Integer page, Integer size);
 	
 	List<String> findAllDistinctAutoPartName();
 	

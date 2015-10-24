@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.geeksexception.project.catalog.dao.AutoPartRepository;
 import org.geeksexception.project.catalog.model.AutoPart;
 import org.geeksexception.project.catalog.service.AutoPartService;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,9 +28,9 @@ public class AutoPartServiceImpl implements AutoPartService {
 	}
 
 	@Override
-	public List<AutoPart> findAutoPartsBySectionAndCar(Long carId, Long sectionId) {
+	public List<AutoPart> findAutoPartsBySectionAndCar(Long carId, Long sectionId, Integer page, Integer size) {
 		
-		return autoPartRepository.findAutoPartsBySectionAndCar(carId, sectionId);
+		return autoPartRepository.findAutoPartsBySectionAndCar(carId, sectionId, new PageRequest(page, size));
 		
 	}
 

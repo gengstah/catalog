@@ -41,7 +41,7 @@ public class AutoPart implements Serializable {
 	@NotEmpty(message = "Name must not be empty")
 	private String name;
 	
-	@Column(name = "DESCRIPTION", nullable = true)
+	@Column(name = "DESCRIPTION", nullable = true, length = 1000)
 	private String description;
 	
 	@Enumerated(EnumType.STRING)

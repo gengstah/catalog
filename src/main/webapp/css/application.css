@@ -3,16 +3,3 @@ body {
 	padding-bottom: 40px;
 	color: #5a5a5a;
 }
-
-.userOption:hover {
-	cursor: pointer;
-}
-
-.lenderAttribute:hover {
-	background-color: #F7F7F7;
-}
-
-.locations {
-	max-height: 100px;
-	overflow-y: scroll;
-}

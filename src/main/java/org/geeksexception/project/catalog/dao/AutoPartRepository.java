@@ -9,8 +9,11 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface AutoPartRepository extends JpaRepository<AutoPart, Long> {
 	
-	@Query("SELECT ap FROM AutoPart ap JOIN ap.compatibleCars c WHERE c.id = ?1 AND ap.section.id = ?2")
-	List<AutoPart> findAutoPartsBySectionAndCar(Long carId, Long sectionId, Pageable pageable);
+	@Query("SELECT ap FROM AutoPart ap WHERE ap.section.id = ?1")
+	List<AutoPart> findAutoPartsBySection(Long sectionId, Pageable pageable);
+	
+	@Query("SELECT ap FROM AutoPart ap JOIN ap.compatibleCars c WHERE ap.section.id = ?1 AND c.id = ?2")
+	List<AutoPart> findAutoPartsBySectionAndCar(Long sectionId, Long carId, Pageable pageable);
 	
 	@Query("SELECT DISTINCT ap.name FROM AutoPart ap ORDER BY ap.name")
 	List<String> findAllDistinctAutoPartName();

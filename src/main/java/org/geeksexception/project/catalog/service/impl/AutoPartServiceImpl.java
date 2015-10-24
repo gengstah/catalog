@@ -26,11 +26,18 @@ public class AutoPartServiceImpl implements AutoPartService {
 		return autoPartRepository.save(autoPart);
 		
 	}
+	
+	@Override
+	public List<AutoPart> findAutoPartsBySection(Long sectionId, Integer page, Integer size) {
+		
+		return autoPartRepository.findAutoPartsBySection(sectionId, new PageRequest(page, size));
+		
+	}
 
 	@Override
-	public List<AutoPart> findAutoPartsBySectionAndCar(Long carId, Long sectionId, Integer page, Integer size) {
+	public List<AutoPart> findAutoPartsBySectionAndCar(Long sectionId, Long carId, Integer page, Integer size) {
 		
-		return autoPartRepository.findAutoPartsBySectionAndCar(carId, sectionId, new PageRequest(page, size));
+		return autoPartRepository.findAutoPartsBySectionAndCar(sectionId, carId, new PageRequest(page, size));
 		
 	}
 

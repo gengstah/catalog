@@ -47,15 +47,30 @@ public class AutoPartManager {
 	@Consumes(MediaType.APPLICATION_JSON_VALUE)
 	@Produces(MediaType.APPLICATION_JSON_VALUE)
 	@Path("/{carId}/{sectionId}")
-	public List<AutoPart> findAutoPartsBySectionAndCar(@NotNull @PathParam("carId") Long carId, 
-			@NotNull @PathParam("sectionId") Long sectionId, 
+	public List<AutoPart> findAutoPartsBySection(@NotNull @PathParam("sectionId") Long sectionId, 
 			@QueryParam("page") @Min(1) Integer page, 
 			@QueryParam("size") @Min(1) Integer size) {
 		
 		if(page == null) page = 1;
 		if(size == null) size = 20;
 		
-		return autoPartService.findAutoPartsBySectionAndCar(carId, sectionId, page, size);
+		return autoPartService.findAutoPartsBySection(sectionId, page, size);
+		
+	}
+	
+	@GET
+	@Consumes(MediaType.APPLICATION_JSON_VALUE)
+	@Produces(MediaType.APPLICATION_JSON_VALUE)
+	@Path("/{carId}/{sectionId}")
+	public List<AutoPart> findAutoPartsBySectionAndCar(@NotNull @PathParam("sectionId") Long sectionId, 
+			@NotNull @PathParam("carId") Long carId, 
+			@QueryParam("page") @Min(1) Integer page, 
+			@QueryParam("size") @Min(1) Integer size) {
+		
+		if(page == null) page = 1;
+		if(size == null) size = 20;
+		
+		return autoPartService.findAutoPartsBySectionAndCar(sectionId, carId, page, size);
 		
 	}
 	

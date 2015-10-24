@@ -18,6 +18,7 @@ public class DevelopmentWebMvcConfig extends AbstractWebMvcConfig {
 	
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/css/**").addResourceLocations("/css/");
 		registry.addResourceHandler("/dist/**").addResourceLocations("/dist/");
 		registry.addResourceHandler("/sitemap/**").addResourceLocations("/sitemap/");
 		registry.addResourceHandler("/img/**").addResourceLocations("/img/");

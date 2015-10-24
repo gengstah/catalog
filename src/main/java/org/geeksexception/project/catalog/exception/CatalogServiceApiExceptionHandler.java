@@ -10,7 +10,7 @@ public class CatalogServiceApiExceptionHandler implements
 		Response.Status status = Response.Status.INTERNAL_SERVER_ERROR;
 		
         return Response.status(status).entity(exception)
-        		.header("X-KCVLendingServiceApi-Exception", exception)
+        		.header("X-CatalogServiceApi-Exception", exception)
         		.build();
 	}
 	

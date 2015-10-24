@@ -46,8 +46,9 @@ public class AutoPartManager {
 	@GET
 	@Consumes(MediaType.APPLICATION_JSON_VALUE)
 	@Produces(MediaType.APPLICATION_JSON_VALUE)
-	@Path("/{carId}/{sectionId}")
-	public List<AutoPart> findAutoPartsBySection(@NotNull @PathParam("sectionId") Long sectionId, 
+	@Path("/{sectionId}")
+	public List<AutoPart> findAutoPartsBySection(
+			@NotNull @PathParam("sectionId") Long sectionId, 
 			@QueryParam("page") @Min(1) Integer page, 
 			@QueryParam("size") @Min(1) Integer size) {
 		
@@ -61,8 +62,9 @@ public class AutoPartManager {
 	@GET
 	@Consumes(MediaType.APPLICATION_JSON_VALUE)
 	@Produces(MediaType.APPLICATION_JSON_VALUE)
-	@Path("/{carId}/{sectionId}")
-	public List<AutoPart> findAutoPartsBySectionAndCar(@NotNull @PathParam("sectionId") Long sectionId, 
+	@Path("/{sectionId}/{carId}")
+	public List<AutoPart> findAutoPartsBySectionAndCar(
+			@NotNull @PathParam("sectionId") Long sectionId, 
 			@NotNull @PathParam("carId") Long carId, 
 			@QueryParam("page") @Min(1) Integer page, 
 			@QueryParam("size") @Min(1) Integer size) {

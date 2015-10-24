@@ -73,7 +73,7 @@ public class AutoPart implements Serializable {
 	private List<Attribute> attributes;
 	
 	@ElementCollection
-	@Column(name = "FILE_LOCATION", nullable = true)
+	@Column(name = "FILE_LOCATION")
 	private List<String> imageFileNames;
 	
 	@ManyToMany

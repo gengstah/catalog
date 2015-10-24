@@ -48,7 +48,15 @@ public class Car implements Serializable {
 	@ManyToMany(mappedBy = "compatibleCars")
 	private List<AutoPart> compatibleAutoParts;
 	
-	public Car(int year, String make, String model, String submodel, String engine) { }
+	public Car() { }
+	
+	public Car(int year, String make, String model, String submodel, String engine) {
+		this.year = year;
+		this.make = make;
+		this.model = model;
+		this.submodel = submodel;
+		this.engine = engine;
+	}
 
 	public Long getId() {
 		return id;

@@ -2,4 +2,4 @@
 
 /* Filters */
 
-var reconciliationFilters = angular.module('KCVLendingFilters', []);
+var reconciliationFilters = angular.module('CatalogFilters', []);

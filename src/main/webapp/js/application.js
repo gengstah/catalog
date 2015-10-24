@@ -1,14 +1,14 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-angular.module('KCVLending', [
+angular.module('Catalog', [
 	'ui.router',
 	'ngCookies',
 	'ui.utils',
-	'KCVLendingFilters',
-	'KCVLendingServices',
-	'KCVLendingDirectives',
-	'KCVLendingControllers'
+	'CatalogFilters',
+	'CatalogServices',
+	'CatalogDirectives',
+	'CatalogControllers'
 ]).
 config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', 'USER_ROLES', 
 	function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, roles) {
@@ -21,120 +21,7 @@ config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvi
 				data: {
 					authorizedRoles: [roles.all]
 				}
-			})
-			.state('users', {
-				url: '/users', 
-				templateUrl: 'templates/users.html',
-				data: {
-					authorizedRoles: [roles.admin]
-				}
-			})
-			.state('user', {
-				url: '/user', 
-				templateUrl: 'templates/user-details.html',
-				data: {
-					authorizedRoles: [roles.admin]
-				}
-			})
-			/*
-			.state('about', {
-				url: '/about', 
-				templateUrl: 'templates/about.html',
-				data: {
-					authorizedRoles: [roles.all]
-				}
-			})
-			.state('contact', {
-				url: '/contact', 
-				templateUrl: 'templates/contact.html',
-				data: {
-					authorizedRoles: [roles.all]
-				}
-			})
-			.state('feedback', {
-				url: '/feedback', 
-				templateUrl: 'templates/feedback.html',
-				data: {
-					authorizedRoles: [roles.all]
-				}
-			})
-			.state('privacy', {
-				url: '/privacy', 
-				templateUrl: 'templates/privacy.html',
-				data: {
-					authorizedRoles: [roles.all]
-				}
-			})
-			.state('lenderCriteriaForm', {
-				url: '/lenderCriteriaForm', 
-				templateUrl: 'templates/lender-criteria-form.html',
-				data: {
-					authorizedRoles: [roles.lender]
-				}
-			})
-			.state('loanRequestsList', {
-				url: '/loanRequestsList', 
-				templateUrl: 'templates/lender-loan-request-list.html',
-				data: {
-					authorizedRoles: [roles.lender]
-				}
-			})
-			.state('loanRequestForm', {
-				url: '/loanRequestForm', 
-				templateUrl: 'templates/borrower-loan-request-form.html',
-				data: {
-					authorizedRoles: [roles.borrower]
-				}
-			})
-			.state('profile', {
-				url: '/profile', 
-				templateUrl: 'templates/profile.html',
-				data: {
-					authorizedRoles: [roles.lender, roles.borrower]
-				}
-			})
-			.state('signup', {
-				url: '/signup', 
-				templateUrl: 'templates/signup.html',
-				data: {
-					authorizedRoles: [roles.all]
-				}
-			})
-			.state('lenderSignUp', {
-				url: '/signup/lender', 
-				templateUrl: 'templates/signup-lender.html',
-				data: {
-					authorizedRoles: [roles.all]
-				}
-			})
-			.state('borrowerSignUp', {
-				url: '/signup/borrower', 
-				templateUrl: 'templates/signup-borrower.html',
-				data: {
-					authorizedRoles: [roles.all]
-				}
-			})
-			.state('changePassword', {
-				url: '/changePassword', 
-				templateUrl: 'templates/change-password.html',
-				data: {
-					authorizedRoles: [roles.lender, roles.borrower]
-				}
-			})
-			.state('addProfileContact', {
-				url: '/profile/contact', 
-				templateUrl: 'templates/add-contact.html',
-				data: {
-					authorizedRoles: [roles.lender, roles.borrower]
-				}
-			})
-			.state('updateProfileContact', {
-				url: '/profile/contact/:id', 
-				templateUrl: 'templates/update-contact.html',
-				data: {
-					authorizedRoles: [roles.lender, roles.borrower]
-				}
-			})*/;
+			});
 		
 		$locationProvider.hashPrefix('!');
 		
@@ -166,9 +53,9 @@ run(['$rootScope', 'AUTH_EVENTS', 'AuthService', 'USER_ROLES', 'Auth', 'Session'
 }]).
 constant('USER_ROLES', {
 	all: '*',
-	lender: 'ROLE_LENDER',
-	borrower: 'ROLE_BORROWER',
-	admin: 'ROLE_ADMIN'
+	admin: 'ROLE_ADMIN',
+	encoder: 'ROLE_ENCODER',
+	member: 'ROLE_MEMBER'
 }).
 constant('AUTH_EVENTS', {
 	loginSuccess: 'auth-login-success',

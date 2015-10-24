@@ -2,34 +2,13 @@
 
 /* Services */
 
-var services = angular.module('KCVLendingServices', ['ngResource']);
+var services = angular.module('CatalogServices', ['ngResource']);
 
-services.factory('Auth', ['$resource', 
+services.factory('Section', ['$resource', 
 	function($resource) {
-		return $resource('/api/service/user/:action', {}, {
-			authenticate: { 
-				method: 'POST', 
-				params: { 
-					action: 'authenticate'
-				}, 
-				headers : { 
-					'Content-Type': 'application/x-www-form-urlencoded' 
-				}
-			},
-			logout: { 
-				method: 'GET', 
-				params: { 
-					action: 'logout'
-				}
-			},
-			changePassword: {
-				method: 'POST',
-				params: { 
-					action: 'changepassword'
-				},
-				headers : { 
-					'Content-Type': 'application/x-www-form-urlencoded' 
-				}
+		return $resource('/api/service/section/:header', {}, {
+			findSectionOfHeader: { 
+				method: 'GET'
 			}
 		});
 	}
@@ -68,20 +47,6 @@ services.service('Session',
 	}
 );
 
-services.service('UserDetailService',
-	function() {
-		this.setUser = function(user) {
-			this.user = user;
-		};
-		
-		this.getUser = function() {
-			return this.user;
-		};
-
-		return this;
-	}
-);
-
 services.factory('AuthInterceptor', ['$rootScope', '$q', 'AUTH_EVENTS',
 	function($rootScope, $q, events) {
 		return {
@@ -98,64 +63,5 @@ services.factory('AuthInterceptor', ['$rootScope', '$q', 'AUTH_EVENTS',
 				
 			}
 		};
-	}
-]);
-
-services.factory('Admin', ['$resource', 
-	function($resource) {
-		return $resource('/api/service/admin/:module/:path/:id', { }, {
-			pendingUsers: {
-				method: 'GET',
-				params: { 
-					module: 'user',
-					path: 'pending'
-				},
-				isArray: true
-			},
-			activeUsers: {
-				method: 'GET',
-				params: { 
-					module: 'user',
-					path: 'active'
-				},
-				isArray: true
-			},
-			disabledUsers: {
-				method: 'GET',
-				params: { 
-					module: 'user',
-					path: 'disabled'
-				},
-				isArray: true
-			},
-			approveUser: {
-				method: 'POST',
-				params: { 
-					module: 'user',
-					path: 'approve'
-				}
-			},
-			rejectUser: {
-				method: 'POST',
-				params: { 
-					module: 'user',
-					path: 'reject'
-				}
-			},
-			deleteUser: {
-				method: 'POST',
-				params: { 
-					module: 'user',
-					path: 'close'
-				}
-			},
-			disableUser: {
-				method: 'POST',
-				params: { 
-					module: 'user',
-					path: 'disable'
-				}
-			}
-		});
 	}
 ]);

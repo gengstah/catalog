@@ -2,4 +2,4 @@
 
 /* Directives */
 
-angular.module('KCVLendingDirectives', []);
+angular.module('CatalogDirectives', []);

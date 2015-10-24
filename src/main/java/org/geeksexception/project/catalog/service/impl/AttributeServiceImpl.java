@@ -25,4 +25,18 @@ public class AttributeServiceImpl implements AttributeService {
 		
 	}
 
+	@Override
+	public List<Attribute> findAttributesByAutoPart(Long autoPartId) {
+		
+		return attributeRepository.findAttributesByAutoPart(autoPartId);
+		
+	}
+
+	@Override
+	public List<Attribute> findDefaultAttributesOfSection(Long sectionId) {
+		
+		return attributeRepository.findDefaultAttributesOfSection(sectionId);
+		
+	}
+
 }

@@ -28,7 +28,7 @@ public class Section implements Serializable {
 	private static final long serialVersionUID = -3807610038754350329L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.TABLE)
 	@Column(name = "SECTION_ID", nullable = false)
 	private Long id;
 	

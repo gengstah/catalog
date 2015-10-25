@@ -33,7 +33,7 @@ public class AutoPart implements Serializable {
 	private static final long serialVersionUID = 1153982262969808841L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.TABLE)
 	@Column(name = "AUTO_PART_ID", nullable = false)
 	private Long id;
 	

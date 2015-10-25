@@ -27,7 +27,7 @@ public class Header implements Serializable {
 	private static final long serialVersionUID = -5187476245502926665L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.TABLE)
 	@Column(name = "HEADER_ID", nullable = false)
 	private Long id;
 	

@@ -10,7 +10,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.Valid;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
@@ -29,7 +32,8 @@ public class Header implements Serializable {
 	private String name;
 	
 	@OneToMany(mappedBy = "header")
-	private List<Section> sections;
+	@Fetch(FetchMode.JOIN)
+	private @Valid List<Section> sections;
 	
 	public Header() { }
 
@@ -47,6 +51,14 @@ public class Header implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public List<Section> getSections() {
+		return sections;
+	}
+
+	public void setSections(List<Section> sections) {
+		this.sections = sections;
 	}
 
 }

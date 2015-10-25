@@ -13,6 +13,9 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.Valid;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "SECTION")
@@ -26,17 +29,18 @@ public class Section implements Serializable {
 	private Long id;
 	
 	@Column(name = "SECTION_NAME", nullable = false)
+	@NotEmpty(message = "Section name must not be empty")
 	private String name;
 	
 	@ManyToOne
 	@JoinColumn(name = "HEADER_ID")
-	private Header header;
+	private @Valid Header header;
 	
 	@ManyToMany
 	@JoinTable(name = "SECTION_ATTRIBUTES", 
 		joinColumns = {@JoinColumn(name="SECTION_ID")},
 		inverseJoinColumns = {@JoinColumn(name="ATTRIBUTE_ID")})
-	private List<Attribute> defaultAttributes;
+	private @Valid List<Attribute> defaultAttributes;
 	
 	public Section() { }
 

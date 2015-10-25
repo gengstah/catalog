@@ -82,6 +82,20 @@ services.service('Session',
 	}
 );
 
+services.service('HeaderService',
+	function() {
+		this.setHeaders = function(headers) {
+			this.headers = headers;
+		};
+		
+		this.getHeaders = function() {
+			return this.headers;
+		};
+		
+		return this;
+	}	
+);
+
 services.factory('AuthInterceptor', ['$rootScope', '$q', 'AUTH_EVENTS',
 	function($rootScope, $q, events) {
 		return {

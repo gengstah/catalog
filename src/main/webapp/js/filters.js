@@ -2,4 +2,10 @@
 
 /* Filters */
 
-var reconciliationFilters = angular.module('CatalogFilters', []);
+var filters = angular.module('CatalogFilters', []);
+
+filters.filter('slice', function() {
+	return function(arr, start, end) {
+		return arr.slice(start, end);
+	}
+});

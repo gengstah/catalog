@@ -2,4 +2,4 @@
 
 /* Directives */
 
-angular.module('CatalogDirectives', []);
+var directives = angular.module('CatalogDirectives', []);

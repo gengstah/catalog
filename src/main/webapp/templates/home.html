@@ -1,3 +1,14 @@
 <section class="row" data-ng-controller="HomeController">
-	<h1>Home</h1>
+	<div class="panel panel-info" data-ng-repeat="header in headers">
+		<div class="panel-heading">
+			<h3 class="panel-title" data-ng-bind="header.name">Panel title</h3>
+		</div>
+		<div class="panel-body">
+			<div class="col-md-4" data-ng-repeat="column in header.columns">
+				<div class="list-group">
+					<a href="#" class="list-group-item" data-ng-repeat="section in header.sections | slice:column.start:column.end" data-ng-bind="section.name">Section</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>

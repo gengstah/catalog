@@ -4,14 +4,15 @@
 
 var controllers = angular.module('CatalogControllers', []);
 
-controllers.controller('ApplicationController', ['$scope', '$state', 'Car', 'Header', 'Section', 'AutoPart', 'Attribute',
-	function($scope, $state, Car, Header, Section, AutoPart, Attribute) {
+controllers.controller('ApplicationController', ['$scope', '$state', 'Car', 'Header', 'Section', 'AutoPart', 'Attribute', 'HeaderService',
+	function($scope, $state, Car, Header, Section, AutoPart, Attribute, HeaderService) {
 		var cars = Car.query();
 		var car = Car.get({ year: 1993, make: 'Nissan', model: 'Sentra', submodel: 'SE', engine: '4 Cyl 1.6L' });
 		console.log("%cCarManager#findAllCars: %O", "color: green", cars);
 		console.log("%cCarManager#findCar: %O", "color: green", car);
 		
 		var headers = Header.query();
+		HeaderService.setHeaders(headers);
 		console.log("%cHeaderManager#findAllHeaders: %O", "color: green", headers);
 		
 		var sectionNames = Section.query();
@@ -35,8 +36,24 @@ controllers.controller('ApplicationController', ['$scope', '$state', 'Car', 'Hea
 	}
 ]);
 
-controllers.controller('HomeController', ['$scope', '$rootScope',
-    function($scope, $rootScope) {
-		
+controllers.controller('HomeController', ['$scope', '$rootScope', 'Header', 'HeaderService',
+    function($scope, $rootScope, Header, HeaderService) {
+		var columnCount = 3;
+		Header.query(function(headers) {			
+			var displayHeaders = [];
+			for(var headerIndex = 0;headerIndex < headers.length;headerIndex++) {
+				var header = headers[headerIndex];
+				var displayHeader = { id: header.id, name: header.name, sections: header.sections, columns: [] };
+				var sectionPerColumn = Math.ceil(header.sections.length / columnCount);
+				
+				for(var sectionIndex = 0;sectionIndex < header.sections.length;sectionIndex += sectionPerColumn) {
+					var sectionColumn = { start: sectionIndex, end: Math.min(sectionIndex + sectionPerColumn, header.sections.length) };
+					displayHeader.columns.push(sectionColumn);
+				}
+				displayHeaders.push(displayHeader);
+			}
+			
+			$scope.headers = displayHeaders;
+		});
 	}
 ]);

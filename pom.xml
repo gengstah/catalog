@@ -4,7 +4,7 @@
   <groupId>org.geeksexception.project</groupId>
   <artifactId>catalog</artifactId>
   <packaging>war</packaging>
-  <version>1.0..0.BUILD-SNAPSHOT</version>
+  <version>1.0.0.BUILD-SNAPSHOT</version>
   <name>catalog Maven Webapp</name>
   <url>http://maven.apache.org</url>
   

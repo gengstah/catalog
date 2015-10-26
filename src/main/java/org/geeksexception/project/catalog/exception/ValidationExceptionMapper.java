@@ -42,7 +42,7 @@ public class ValidationExceptionMapper implements
             
             return Response
             		.status(Response.Status.BAD_REQUEST).entity(errors)
-            		.header("X-KCVLendingServiceApi-Exception", errors)
+            		.header("X-CatalogServiceApi-Exception", errors)
             		.build();
         } else {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(exception).build();

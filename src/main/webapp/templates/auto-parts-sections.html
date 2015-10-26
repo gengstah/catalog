@@ -7,7 +7,9 @@
 		<div class="panel-body">
 			<div class="col-md-4" data-ng-repeat="column in header.columns">
 				<div class="list-group">
-					<a href="#" class="list-group-item" data-ng-repeat="section in header.sections | slice:column.start:column.end" data-ng-bind="section.name">Section</a>
+					<a href="#" class="list-group-item" data-ng-click="showAutoParts(section)" 
+						data-ng-repeat="section in header.sections | slice:column.start:column.end" 
+						data-ng-bind="section.name">Section</a>
 				</div>
 			</div>
 		</div>

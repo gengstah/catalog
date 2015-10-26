@@ -119,7 +119,21 @@ services.service('HeaderService',
 		};
 		
 		return this;
-	}	
+	}
+);
+
+services.service('SectionService',
+	function() {
+		this.setSection = function(section) {
+			this.section = section;
+		};
+		
+		this.getSection = function() {
+			return this.section;
+		};
+		
+		return this;
+	}
 );
 
 services.factory('AuthInterceptor', ['$rootScope', '$q', 'AUTH_EVENTS',

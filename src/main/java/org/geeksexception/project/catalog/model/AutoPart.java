@@ -24,6 +24,8 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 import org.geeksexception.project.catalog.enums.AutoPartStatus;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
@@ -70,6 +72,7 @@ public class AutoPart implements Serializable {
 	@JoinTable(name = "AUTO_PART_ATTRIBUTES", 
 		joinColumns = {@JoinColumn(name="AUTO_PART_ID")},
 		inverseJoinColumns = {@JoinColumn(name="ATTRIBUTE_ID")})
+	@Fetch(FetchMode.JOIN)
 	private List<Attribute> attributes;
 	
 	@ElementCollection

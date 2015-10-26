@@ -1,0 +1,39 @@
+<section class="row" data-ng-controller="AutoPartsController">
+	<div class="panel panel-info" data-ng-repeat="autoPart in autoParts">
+		<div class="panel-body">
+			<div class="col-md-12">
+				<div class="col-md-4">
+				
+				</div>
+				<div class="col-md-8">
+					<h3><span data-ng-bind="autoPart.name">Auto part name</span></h3>
+					<h6><span>{{ car.year }} {{ car.make }} {{ car.model }} {{ car.submodel }} {{ car.engine }}</span></h6>
+				</div>
+			</div>
+			
+			<div class="col-md-8">
+				<div class="panel panel-info">
+					<div class="panel-body">
+						<div data-ng-repeat="attribute in autoPart.attributes">
+							<div class="col-sm-6">{{ attribute.name }}:</div>
+							<div class="col-sm-6">{{ attribute.value }}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-md-4">
+				<div class="panel panel-info">
+					<div class="panel-body">
+						<div class="col-sm-6">List Price:</div>
+						<div class="col-sm-6"><s>Php <span data-ng-bind="autoPart.listPrice | number:2">0.0</span></s></div>
+						<div class="col-sm-6">Our Price:</div>
+						<div class="col-sm-6">Php <span data-ng-bind="autoPart.actualPrice | number:2">0.0</span></div>
+						<div class="col-sm-6">Your Save:</div>
+						<div class="col-sm-6">Php {{ autoPart.listPrice - autoPart.actualPrice | number:2 }}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

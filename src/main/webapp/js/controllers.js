@@ -140,8 +140,8 @@ controllers.controller('HomeController', ['$scope', '$rootScope', '$state', 'Car
 	}
 ]);
 
-controllers.controller('AutoPartsSectionController', ['$scope', '$rootScope', '$state', 'HeaderService', 'CarService',
-	function($scope, $rootScope, $state, HeaderService, CarService) {
+controllers.controller('AutoPartsSectionController', ['$scope', '$rootScope', '$state', 'HeaderService', 'CarService', 'SectionService',
+	function($scope, $rootScope, $state, HeaderService, CarService, SectionService) {
 		if(CarService.getCar() == null || CarService.getCar() == undefined) $state.go("home");
   		var columnCount = 3;
   		var headers = HeaderService.getHeaders();
@@ -161,5 +161,29 @@ controllers.controller('AutoPartsSectionController', ['$scope', '$rootScope', '$
   		
   		$scope.headers = displayHeaders;
   		$scope.car = CarService.getCar();
+  		$scope.showAutoParts = function showAutoParts(section) {
+  			if(section) {
+  				SectionService.setSection(section);
+  				$state.go("autoParts");
+  			}
+  		};
   	}
+]);
+
+controllers.controller('AutoPartsController', ['$scope', '$rootScope', '$state', 'AutoPart', 'CarService', 'SectionService',
+	function($scope, $rootScope, $state, AutoPart, CarService, SectionService) {
+		if(SectionService.getSection() == null || SectionService.getSection() == undefined) $state.go("autoPartsSections");
+		
+		if(CarService.getCar())
+			AutoPart.query({ section: SectionService.getSection().id, car: CarService.getCar().id, page: 1, size: 20 }, function(autoPartsBySectionAndCar) {
+				console.log("%cAutoPartManager#findAutoPartsBySectionAndCar: %O", "color: green", autoPartsBySectionAndCar);
+				$scope.autoParts = autoPartsBySectionAndCar;
+				$scope.car = CarService.getCar();
+			});
+		else
+			AutoPart.query({ section: SectionService.getSection().id, page: 1, size: 20 }, function(autoPartsBySection) {
+				console.log("%cAutoPartManager#findAutoPartsBySection: %O", "color: green", autoPartsBySection);
+				$scope.autoParts = autoPartsBySection;
+			});
+	}
 ]);

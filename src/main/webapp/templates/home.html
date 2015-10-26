@@ -1,13 +1,62 @@
 <section class="row" data-ng-controller="HomeController">
-	<div class="panel panel-info" data-ng-repeat="header in headers">
-		<div class="panel-heading">
-			<h3 class="panel-title" data-ng-bind="header.name">Panel title</h3>
+	<h1>Home</h1>
+	<div class="col-md-4">
+		<div class="panel panel-info" data-ng-if="car">
+			<div class="panel-body">
+				<a href="#" data-ng-click="showAutoPartsSection()">{{ car.year }} {{ car.make }} {{ car.model }} {{ car.submodel }} {{ car.engine }}</a><a href="#"><span data-ng-click="removeCar()" class="glyphicon glyphicon-remove pull-right"></span></a>
+			</div>
 		</div>
-		<div class="panel-body">
-			<div class="col-md-4" data-ng-repeat="column in header.columns">
-				<div class="list-group">
-					<a href="#" class="list-group-item" data-ng-repeat="section in header.sections | slice:column.start:column.end" data-ng-bind="section.name">Section</a>
-				</div>
+		<div class="panel panel-info" data-ng-if="!car">
+			<div class="panel-heading">
+				<h3 class="panel-title">SELECT YOUR VEHICLE</h3>
+			</div>
+			<div class="panel-body">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<div class="col-sm-12">
+							<select class="form-control" data-ng-model="year" data-ng-change="toggleMake(year);make = '';model='';submodel='';engine='';">
+								<option value="">Select Year</option>
+								<option value="{{key}}" data-ng-repeat="(key, value) in cars">{{ key }}</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-12">
+							<select id="make" class="form-control" disabled="disabled" data-ng-model="make" data-ng-change="toggleModel(make);model='';submodel='';engine='';">
+								<option value="">Select Brand</option>
+								<option value="{{key}}" data-ng-repeat="(key, value) in cars[year]">{{ key }}</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-12">
+							<select id="model" class="form-control" disabled="disabled" data-ng-model="model" data-ng-change="toggleSubmodel(model);submodel='';engine='';">
+								<option value="">Select Model</option>
+								<option value="{{key}}" data-ng-repeat="(key, value) in cars[year][make]">{{ key }}</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-12">
+							<select id="submodel" class="form-control" disabled="disabled" data-ng-model="submodel" data-ng-change="toggleEngine(submodel);engine='';">
+								<option value="">Select Submodel</option>
+								<option value="{{key}}" data-ng-repeat="(key, value) in cars[year][make][model]">{{ key }}</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-12">
+							<select id="engine" class="form-control" disabled="disabled" data-ng-model="engine" data-ng-change="findCar(year, make, model, submodel, engine)">
+								<option value="">Select Engine</option>
+								<option value="{{key}}" data-ng-repeat="(key, value) in cars[year][make][model][submodel]">{{ key }}</option>
+							</select>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

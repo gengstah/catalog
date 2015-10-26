@@ -82,6 +82,32 @@ services.service('Session',
 	}
 );
 
+services.service('CarService',
+	function() {
+		this.setCars = function(cars) {
+			this.cars = cars;
+		};
+		
+		this.getCars = function() {
+			return this.cars;
+		};
+		
+		this.setCar = function(car) {
+			this.car = car;
+		};
+		
+		this.getCar = function() {
+			return this.car;
+		};
+		
+		this.destroyCar = function() {
+			this.car = null;
+		};
+		
+		return this;
+	}	
+);
+
 services.service('HeaderService',
 	function() {
 		this.setHeaders = function(headers) {

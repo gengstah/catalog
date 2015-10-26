@@ -18,6 +18,10 @@ config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvi
 			.state('home', {
 				url: '/', 
 				templateUrl: 'templates/home.html'
+			})
+			.state('autoPartsSections', {
+				url: '/autoPartsSections', 
+				templateUrl: 'templates/auto-parts-sections.html'
 			});
 		
 		$locationProvider.hashPrefix('!');

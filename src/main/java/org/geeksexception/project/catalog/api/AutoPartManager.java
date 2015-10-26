@@ -72,7 +72,7 @@ public class AutoPartManager {
 		if(page == null) page = 1;
 		if(size == null) size = 20;
 		
-		return autoPartService.findAutoPartsBySectionAndCar(sectionId, carId, page, size);
+		return autoPartService.findAutoPartsBySectionAndCar(sectionId, carId, page - 1, size);
 		
 	}
 	

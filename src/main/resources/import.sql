@@ -578,11 +578,31 @@ INSERT INTO CAR(CAR_ID, YEAR, MAKE, MODEL, SUBMODEL, ENGINE) VALUES(25, 1994, 'N
 INSERT INTO CAR(CAR_ID, YEAR, MAKE, MODEL, SUBMODEL, ENGINE) VALUES(26, 1994, 'Nissan', 'Sentra', 'SE', '4 Cyl 1.6L');
 INSERT INTO CAR(CAR_ID, YEAR, MAKE, MODEL, SUBMODEL, ENGINE) VALUES(27, 1994, 'Nissan', 'Sentra', 'SE-R', '4 Cyl 2.0L');
 INSERT INTO CAR(CAR_ID, YEAR, MAKE, MODEL, SUBMODEL, ENGINE) VALUES(28, 1994, 'Nissan', 'Sentra', 'XE', '4 Cyl 1.6L');
+INSERT INTO CAR(CAR_ID, YEAR, MAKE, MODEL, SUBMODEL, ENGINE) VALUES(29, 1991, 'Toyota', 'Supra', 'Base', '6 Cyl 3.0L');
+INSERT INTO CAR(CAR_ID, YEAR, MAKE, MODEL, SUBMODEL, ENGINE) VALUES(30, 1991, 'Toyota', 'Supra', 'Turbo', '6 Cyl 3.0L');
+INSERT INTO CAR(CAR_ID, YEAR, MAKE, MODEL, SUBMODEL, ENGINE) VALUES(31, 1991, 'Toyota', 'Celica', 'GT', '4 Cyl 2.2L');
+INSERT INTO CAR(CAR_ID, YEAR, MAKE, MODEL, SUBMODEL, ENGINE) VALUES(32, 1991, 'Toyota', 'Celica', 'GTS', '4 Cyl 2.2L');
+INSERT INTO CAR(CAR_ID, YEAR, MAKE, MODEL, SUBMODEL, ENGINE) VALUES(33, 1991, 'Toyota', 'Celica', 'ST', '4 Cyl 2.2L');
+INSERT INTO CAR(CAR_ID, YEAR, MAKE, MODEL, SUBMODEL, ENGINE) VALUES(34, 1992, 'Toyota', 'Supra', 'Base', '6 Cyl 3.0L');
+INSERT INTO CAR(CAR_ID, YEAR, MAKE, MODEL, SUBMODEL, ENGINE) VALUES(35, 1992, 'Toyota', 'Supra', 'Turbo', '6 Cyl 3.0L');
+INSERT INTO CAR(CAR_ID, YEAR, MAKE, MODEL, SUBMODEL, ENGINE) VALUES(36, 1992, 'Toyota', 'Celica', 'GT', '4 Cyl 2.2L');
+INSERT INTO CAR(CAR_ID, YEAR, MAKE, MODEL, SUBMODEL, ENGINE) VALUES(37, 1992, 'Toyota', 'Celica', 'GTS', '4 Cyl 2.2L');
+INSERT INTO CAR(CAR_ID, YEAR, MAKE, MODEL, SUBMODEL, ENGINE) VALUES(38, 1992, 'Toyota', 'Celica', 'ST', '4 Cyl 2.2L');
+INSERT INTO CAR(CAR_ID, YEAR, MAKE, MODEL, SUBMODEL, ENGINE) VALUES(39, 1993, 'Toyota', 'Supra', 'Base', '6 Cyl 3.0L');
+INSERT INTO CAR(CAR_ID, YEAR, MAKE, MODEL, SUBMODEL, ENGINE) VALUES(40, 1993, 'Toyota', 'Supra', 'Turbo', '6 Cyl 3.0L');
+INSERT INTO CAR(CAR_ID, YEAR, MAKE, MODEL, SUBMODEL, ENGINE) VALUES(41, 1993, 'Toyota', 'Celica', 'GT', '4 Cyl 2.2L');
+INSERT INTO CAR(CAR_ID, YEAR, MAKE, MODEL, SUBMODEL, ENGINE) VALUES(42, 1993, 'Toyota', 'Celica', 'GTS', '4 Cyl 2.2L');
+INSERT INTO CAR(CAR_ID, YEAR, MAKE, MODEL, SUBMODEL, ENGINE) VALUES(43, 1993, 'Toyota', 'Celica', 'ST', '4 Cyl 2.2L');
+INSERT INTO CAR(CAR_ID, YEAR, MAKE, MODEL, SUBMODEL, ENGINE) VALUES(44, 1994, 'Toyota', 'Supra', 'Base', '6 Cyl 3.0L');
+INSERT INTO CAR(CAR_ID, YEAR, MAKE, MODEL, SUBMODEL, ENGINE) VALUES(45, 1994, 'Toyota', 'Supra', 'Turbo', '6 Cyl 3.0L');
+INSERT INTO CAR(CAR_ID, YEAR, MAKE, MODEL, SUBMODEL, ENGINE) VALUES(46, 1994, 'Toyota', 'Celica', 'GT', '4 Cyl 2.2L');
+INSERT INTO CAR(CAR_ID, YEAR, MAKE, MODEL, SUBMODEL, ENGINE) VALUES(47, 1994, 'Toyota', 'Celica', 'GTS', '4 Cyl 2.2L');
+INSERT INTO CAR(CAR_ID, YEAR, MAKE, MODEL, SUBMODEL, ENGINE) VALUES(48, 1994, 'Toyota', 'Celica', 'ST', '4 Cyl 2.2L');
 
-INSERT INTO HIBERNATE_SEQUENCES(SEQUENCE_NAME, SEQUENCE_NEXT_HI_VALUE) VALUES('CAR', 28);
+INSERT INTO HIBERNATE_SEQUENCES(SEQUENCE_NAME, SEQUENCE_NEXT_HI_VALUE) VALUES('CAR', 48);
 
 -- AutoPart
-INSERT INTO AUTO_PART(AUTO_PART_ID, NAME, DESCRIPTION, STATUS, QUANTITY, LIST_PRICE, ACTUAL_PRICE, UNIVERSAL, SECTION_ID, DATE_ADDED, DATE_APPROVED) VALUES(1, 'American Cylinder Head 1993 Nissan Sentra', 'Uncompromised quality and precision remanufacturing is what you get in every American Cylinder Head product. No need to hunt for a machine shop – remanufactured cylinder heads are kept in stock and delivered ready to install to get your vehicle back on the road in the least amount of time. American Cylinder Head has been providing the finest remanufactured cylinder heads for over 40 years and is a family owned and operated business with an endless commitment to product improvement and customer satisfaction.', 'PUBLISHED', 1, 328.13, 217.36, 0, 1, current_timestamp, current_timestamp)
+INSERT INTO AUTO_PART(AUTO_PART_ID, NAME, DESCRIPTION, STATUS, QUANTITY, LIST_PRICE, ACTUAL_PRICE, UNIVERSAL, SECTION_ID, DATE_ADDED, DATE_APPROVED) VALUES(1, 'American Cylinder Head 1993 Nissan Sentra', 'Uncompromised quality and precision remanufacturing is what you get in every American Cylinder Head product. No need to hunt for a machine shop – remanufactured cylinder heads are kept in stock and delivered ready to install to get your vehicle back on the road in the least amount of time. American Cylinder Head has been providing the finest remanufactured cylinder heads for over 40 years and is a family owned and operated business with an endless commitment to product improvement and customer satisfaction.', 'PUBLISHED', 1, 328.13, 217.36, 0, 229, current_timestamp, current_timestamp)
 
 INSERT INTO HIBERNATE_SEQUENCES(SEQUENCE_NAME, SEQUENCE_NEXT_HI_VALUE) VALUES('AUTO_PART', 1);
 
@@ -596,7 +616,7 @@ INSERT INTO ATTRIBUTE(ATTRIBUTE_ID, NAME, VALUE) VALUES(94, 'Part Number', 'AC23
 INSERT INTO ATTRIBUTE(ATTRIBUTE_ID, NAME, VALUE) VALUES(95, 'Availability', 'In Stock');
 INSERT INTO ATTRIBUTE(ATTRIBUTE_ID, NAME, VALUE) VALUES(96, 'FitNote', 'Alum');
 
-INSERT INTO HIBERNATE_SEQUENCES(SEQUENCE_NAME, SEQUENCE_NEXT_HI_VALUE) VALUES('ATTRIBUTE', 87);
+INSERT INTO HIBERNATE_SEQUENCES(SEQUENCE_NAME, SEQUENCE_NEXT_HI_VALUE) VALUES('ATTRIBUTE', 96);
 
 INSERT INTO AUTO_PART_ATTRIBUTES(AUTO_PART_ID, ATTRIBUTE_ID) VALUES(1, 88)
 INSERT INTO AUTO_PART_ATTRIBUTES(AUTO_PART_ID, ATTRIBUTE_ID) VALUES(1, 89)

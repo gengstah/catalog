@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" data-ng-app="Catalog" class="no-js lt-ie9 lt-ie8 lt-ie7" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" data-ng-app="Catalog" class="no-js lt-ie9 lt-ie8" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" data-ng-app="Catalog" class="no-js lt-ie9" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" data-ng-app="Catalog" class="no-js" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<title>Auto Parts Catalog | Home</title>
+	<meta name="description" content="The Project a Bootstrap-based, Responsive HTML5 Template" />
+	<meta name="author" content="htmlcoder.me" />
+
+	<!-- Mobile Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="/images/favicon.ico" />
+
+	<!-- Web Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css' />
+	<link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css' />
+	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css' />
+	<link href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css' />
+
+	<!-- Bootstrap core CSS -->
+	<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+	<!-- Font Awesome CSS -->
+	<link href="/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+	<!-- Fontello CSS -->
+	<link href="/fonts/fontello/css/fontello.css" rel="stylesheet" />
+
+	<!-- Plugins -->
+	<link href="/plugins/magnific-popup/magnific-popup.css" rel="stylesheet" />
+	<link href="/plugins/rs-plugin/css/settings.css" rel="stylesheet" />
+	<link href="/css/animations.css" rel="stylesheet" />
+	<link href="/plugins/owl-carousel/owl.carousel.css" rel="stylesheet" />
+	<link href="/plugins/owl-carousel/owl.transitions.css" rel="stylesheet" />
+	<link href="/plugins/hover/hover-min.css" rel="stylesheet" />
+	
+	<!-- Bootstrap Datepicker CSS -->
+	<link href="../../css/bootstrap-datepicker3.standalone.min.css" th:href="@{/css/bootstrap-datepicker3.standalone.min.css}" rel="stylesheet" />
+	
+	<!-- Bootstrap Fileinput CSS -->
+	<link href="../../css/fileinput.min.css" th:href="@{/css/fileinput.min.css}" rel="stylesheet" />
+	
+	<!-- Bootstrap Typeahead CSS -->
+	<link href="../../css/tokenfield-typeahead.min.css" th:href="@{/css/tokenfield-typeahead.min.css}" rel="stylesheet" />
+	<link href="../../css/bootstrap-tokenfield.min.css" th:href="@{/css/bootstrap-tokenfield.min.css}" rel="stylesheet" />
+
+	<!-- the project core CSS file -->
+	<link href="/css/style.css" rel="stylesheet" />
+
+	<!-- Style Switcher Styles (Remove these two lines) -->
+	<link href="#" data-style="styles" rel="stylesheet" />
+	<link href="/style-switcher/style-switcher.css" rel="stylesheet" />
+
+	<!-- Custom css --> 
+	<link href="/css/custom.css" rel="stylesheet" />
+</head>
+<!-- body classes:  -->
+<!-- "boxed": boxed layout mode e.g. <body class="boxed"> -->
+<!-- "pattern-1 ... pattern-9": background patterns for boxed layout mode e.g. <body class="boxed pattern-1"> -->
+<!-- "transparent-header": makes the header transparent and pulls the banner to top -->
+<!-- "page-loader-1 ... page-loader-6": add a page loader to the page (more info @components-page-loaders.html) -->
+<body class="no-trans front-page transparent-header page-loader-1" data-ng-controller="ApplicationController">
+
+	<!-- scrollToTop -->
+	<!-- ================ -->
+	<div class="scrollToTop circle"><i class="icon-up-open-big"></i></div>
+	
+	<!-- page wrapper start -->
+	<!-- ================ -->
+	<div class="page-wrapper">
+	
+		<!-- header-container start -->
+		<div class="header-container">
+			
+			<!-- header-top start -->
+			<!-- classes:  -->
+			<!-- "dark": dark version of header top e.g. class="header-top dark" -->
+			<!-- "colored": colored version of header top e.g. class="header-top colored" -->
+			<!-- ================ -->
+			<div class="header-top dark ">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-3 col-sm-6 col-md-9">
+							<!-- header-top-first start -->
+							<!-- ================ -->
+							<div class="header-top-first clearfix">
+								<ul class="social-links circle small clearfix hidden-xs">
+									<li class="twitter"><a target="_blank" href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
+									<li class="skype"><a target="_blank" href="http://www.skype.com"><i class="fa fa-skype"></i></a></li>
+									<li class="linkedin"><a target="_blank" href="http://www.linkedin.com"><i class="fa fa-linkedin"></i></a></li>
+									<li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
+									<li class="youtube"><a target="_blank" href="http://www.youtube.com"><i class="fa fa-youtube-play"></i></a></li>
+									<li class="flickr"><a target="_blank" href="http://www.flickr.com"><i class="fa fa-flickr"></i></a></li>
+									<li class="facebook"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+									<li class="pinterest"><a target="_blank" href="http://www.pinterest.com"><i class="fa fa-pinterest"></i></a></li>
+								</ul>
+								<div class="social-links hidden-lg hidden-md hidden-sm circle small">
+									<div class="btn-group dropdown">
+										<button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="fa fa-share-alt"></i></button>
+										<ul class="dropdown-menu dropdown-animation">
+											<li class="twitter"><a target="_blank" href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
+											<li class="skype"><a target="_blank" href="http://www.skype.com"><i class="fa fa-skype"></i></a></li>
+											<li class="linkedin"><a target="_blank" href="http://www.linkedin.com"><i class="fa fa-linkedin"></i></a></li>
+											<li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
+											<li class="youtube"><a target="_blank" href="http://www.youtube.com"><i class="fa fa-youtube-play"></i></a></li>
+											<li class="flickr"><a target="_blank" href="http://www.flickr.com"><i class="fa fa-flickr"></i></a></li>
+											<li class="facebook"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+											<li class="pinterest"><a target="_blank" href="http://www.pinterest.com"><i class="fa fa-pinterest"></i></a></li>
+										</ul>
+									</div>
+								</div>
+								<ul class="list-inline hidden-sm hidden-xs">
+									<li><i class="fa fa-map-marker pr-5 pl-10"></i>Norma St. B. Balic, Sampaloc, Manila, 1008</li>
+									<li><i class="fa fa-phone pr-5 pl-10"></i>+63 927 474 2769</li>
+									<li><i class="fa fa-envelope-o pr-5 pl-10"></i> mhaj_saleh@yahoo.com</li>
+								</ul>
+							</div>
+							<!-- header-top-first end -->
+						</div>
+						<div class="col-xs-9 col-sm-6 col-md-3">
+
+							<!-- header-top-second start -->
+							<!-- ================ -->
+							<div id="header-top-second"  class="clearfix">
+								
+								<!-- header top dropdowns start -->
+								<!-- ================ -->
+								<div class="header-top-dropdown text-right">
+									<div class="btn-group dropdown" data-ng-show="car">
+										<button type="button" class="btn dropdown-toggle btn-default btn-sm" data-toggle="dropdown"><i class="fa fa-check-square-o pr-10"></i> Car Selected</button>
+										<ul class="dropdown-menu dropdown-menu-right dropdown-animation">
+											<li>
+												<a href="#!/autoPartsSections" class="btn btn-default btn-sm"><i class="fa fa-gear pr-10"></i> {{ car.year }} {{ car.make }} {{ car.model }} {{ car.submodel }} {{ car.engine }}</a>
+												<a href="" data-ng-click="removeCar()" class="btn btn-default btn-sm"><i class="fa fa-remove pr-10"></i> Clear</a>
+											</li>
+										</ul>
+									</div>
+									<div class="btn-group dropdown" data-ng-show="!car">
+										<button type="button" class="btn dropdown-toggle btn-default btn-sm" data-toggle="dropdown"><i class="fa fa-question-circle pr-10"></i> Select your vehicle</button>
+										<ul class="dropdown-menu dropdown-menu-right dropdown-animation">
+											<li>
+												<form class="login-form margin-clear" name="loginForm" role="form" method="POST">
+													<div class="form-group has-feedback">
+														<label class="control-label">Year</label>
+														<select class="form-control" data-ng-model="year" data-ng-change="toggleMake(year);make = '';model='';submodel='';engine='';">
+															<option value="">Select Year</option>
+															<option value="{{key}}" data-ng-repeat="(key, value) in cars">{{ key }}</option>
+														</select>
+														<i class="fa fa-clock-o form-control-feedback"></i>
+													</div>
+													<div class="form-group has-feedback">
+														<label class="control-label">Brand</label>
+														<select id="make" class="form-control" disabled="disabled" data-ng-model="make" data-ng-change="toggleModel(make);model='';submodel='';engine='';">
+															<option value="">Select Brand</option>
+															<option value="{{key}}" data-ng-repeat="(key, value) in cars[year]">{{ key }}</option>
+														</select>
+														<i class="fa fa-car form-control-feedback"></i>
+													</div>
+													<div class="form-group has-feedback">
+														<label class="control-label">Model</label>
+														<select id="model" class="form-control" disabled="disabled" data-ng-model="model" data-ng-change="toggleSubmodel(model);submodel='';engine='';">
+															<option value="">Select Model</option>
+															<option value="{{key}}" data-ng-repeat="(key, value) in cars[year][make]">{{ key }}</option>
+														</select>
+														<i class="fa fa-car form-control-feedback"></i>
+													</div>
+													<div class="form-group has-feedback">
+														<label class="control-label">Submodel</label>
+														<select id="submodel" class="form-control" disabled="disabled" data-ng-model="submodel" data-ng-change="toggleEngine(submodel);engine='';">
+															<option value="">Select Submodel</option>
+															<option value="{{key}}" data-ng-repeat="(key, value) in cars[year][make][model]">{{ key }}</option>
+														</select>
+														<i class="fa fa-car form-control-feedback"></i>
+													</div>
+													<div class="form-group has-feedback">
+														<label class="control-label">Engine</label>
+														<select id="engine" class="form-control" disabled="disabled" data-ng-model="engine" data-ng-change="findCar(year, make, model, submodel, engine)">
+															<option value="">Select Engine</option>
+															<option value="{{key}}" data-ng-repeat="(key, value) in cars[year][make][model][submodel]">{{ key }}</option>
+														</select>
+														<i class="fa fa-gears form-control-feedback"></i>
+													</div>
+												</form>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!--  header top dropdowns end -->
+								
+								<!-- header top dropdowns start -->
+								<!-- ================ -->
+								<!-- <div class="header-top-dropdown text-right" data-ng-if="!isAuthenticated()">
+									<div class="btn-group">
+										<a href="#!/register" class="btn btn-default btn-sm"><i class="fa fa-user pr-10"></i> Sign Up</a>
+									</div>
+									<div class="btn-group dropdown">
+										<button type="button" class="btn dropdown-toggle btn-default btn-sm" data-toggle="dropdown"><i class="fa fa-lock pr-10"></i> Login</button>
+										<ul class="dropdown-menu dropdown-menu-right dropdown-animation">
+											<li>
+												<form class="login-form margin-clear" name="loginForm" role="form" method="POST" data-ng-submit="login(credentials)">
+													<div class="form-group has-feedback">
+														<label class="control-label">Email</label>
+														<input type="email" class="form-control" id="email" name="email" placeholder="" required="required" data-ng-model="credentials.email" />
+														<i class="fa fa-user form-control-feedback"></i>
+													</div>
+													<div class="form-group has-feedback">
+														<label class="control-label">Password</label>
+														<input type="password" class="form-control" id="password1" name="password1" placeholder="" required="required" data-ng-model="credentials.password" />
+														<i class="fa fa-lock form-control-feedback"></i>
+													</div>
+													<button type="submit" class="btn btn-gray btn-sm">Log In</button>
+													<span class="pl-5 pr-5">or</span>
+													<button type="submit" class="btn btn-default btn-sm">Sign Up</button>
+													<a href="#!/register" class="btn btn-default btn-sm">Sign Up</a>
+													<ul>
+														<li><a href="#">Forgot your password?</a></li>
+													</ul>
+													<span class="text-center">Login with</span>
+													<ul class="social-links circle small colored clearfix">
+														<li class="facebook"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+														<li class="twitter"><a target="_blank" href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
+														<li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
+													</ul>
+												</form>
+											</li>
+										</ul>
+									</div>
+								</div> -->
+								<!--  header top dropdowns end -->
+								
+								<!-- header top dropdowns start -->
+								<!-- ================ -->
+								<!-- <div class="header-top-dropdown text-right" data-ng-if="isAuthenticated()">
+									<div class="btn-group dropdown">
+										<button type="button" class="btn dropdown-toggle btn-default btn-sm" data-toggle="dropdown"><i class="fa fa-lock pr-10"></i> <span data-ng-bind="user.email">Geng</span></button>
+										<ul class="dropdown-menu dropdown-menu-right dropdown-animation">
+											<li>
+												<form class="login-form margin-clear" name="loginForm" role="form" method="POST" data-ng-submit="login(credentials)">
+													<div class="form-group has-feedback">
+														<label class="control-label">Email</label>
+														<input type="email" class="form-control" id="email" name="email" placeholder="" required="required" data-ng-model="credentials.email" />
+														<i class="fa fa-user form-control-feedback"></i>
+													</div>
+													<div class="form-group has-feedback">
+														<label class="control-label">Password</label>
+														<input type="password" class="form-control" id="password1" name="password1" placeholder="" required="required" data-ng-model="credentials.password" />
+														<i class="fa fa-lock form-control-feedback"></i>
+													</div>
+													<button type="submit" class="btn btn-gray btn-sm">Log In</button>
+													<span class="pl-5 pr-5">or</span>
+													<button type="submit" class="btn btn-default btn-sm">Sign Up</button>
+													<ul>
+														<li><a href="#">Forgot your password?</a></li>
+													</ul>
+													<span class="text-center">Login with</span>
+													<ul class="social-links circle small colored clearfix">
+														<li class="facebook"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+														<li class="twitter"><a target="_blank" href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
+														<li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
+													</ul>
+												</form>
+												<a href="#!/talent/profile" class="btn btn-default btn-sm" data-ng-if="isAuthorized(userRoles.user)">Profile</a>
+												<a href="#!/agency/profile" class="btn btn-default btn-sm" data-ng-if="isAuthorized(userRoles.agency)">Profile</a>
+												<a href="#!/changePassword" class="btn btn-default btn-sm">Change Password</a>
+												<a href="" data-ng-click="logout()" class="btn btn-default btn-sm">Sign Out</a>
+											</li>
+										</ul>
+									</div>
+								</div> -->
+								<!--  header top dropdowns end -->
+							</div>
+							<!-- header-top-second end -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- header-top end -->
+			
+			<!-- header start -->
+			<!-- classes:  -->
+			<!-- "fixed": enables fixed navigation mode (sticky menu) e.g. class="header fixed clearfix" -->
+			<!-- "dark": dark version of header e.g. class="header dark clearfix" -->
+			<!-- "full-width": mandatory class for the full-width menu layout -->
+			<!-- "centered": mandatory class for the centered logo layout -->
+			<!-- ================ --> 
+			<header class="header  fixed   clearfix">
+				
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3">
+							<!-- header-left start -->
+							<!-- ================ -->
+							<div class="header-left clearfix">
+
+								<!-- logo -->
+								<div id="logo" class="logo">
+									<a href="#!/"><img id="logo_img" src="/images/logo_light_blue.png" alt="The Project" /></a>
+								</div>
+
+								<!-- name-and-slogan -->
+								<div class="site-slogan">
+									Multipurpose HTML5 Template
+								</div>
+								
+							</div>
+							<!-- header-left end -->
+
+						</div>
+						<div class="col-md-9">
+				
+							<!-- header-right start -->
+							<!-- ================ -->
+							<div class="header-right clearfix">
+								
+							<!-- main-navigation start -->
+							<!-- classes: -->
+							<!-- "onclick": Makes the dropdowns open on click, this the default bootstrap behavior e.g. class="main-navigation onclick" -->
+							<!-- "animated": Enables animations on dropdowns opening e.g. class="main-navigation animated" -->
+							<!-- "with-dropdown-buttons": Mandatory class that adds extra space, to the main navigation, for the search and cart dropdowns -->
+							<!-- ================ -->
+							<div class="main-navigation  animated with-dropdown-buttons">
+
+								<!-- navbar start -->
+								<!-- ================ -->
+								<nav class="navbar navbar-default" role="navigation">
+									<div class="container-fluid">
+
+										<!-- Toggle get grouped for better mobile display -->
+										<div class="navbar-header">
+											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+												<span class="sr-only">Toggle navigation</span>
+												<span class="icon-bar"></span>
+												<span class="icon-bar"></span>
+												<span class="icon-bar"></span>
+											</button>
+											
+										</div>
+
+										<!-- Collect the nav links, forms, and other content for toggling -->
+										<div class="collapse navbar-collapse" id="navbar-collapse-1">
+											<!-- main-menu -->
+											<ul class="nav navbar-nav ">
+
+												<!-- mega-menu start -->													
+												<li class="dropdown mega-menu" data-ui-route="/" data-ng-class="{active: $uiRoute}">
+													<a href="#!/" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+													<ul class="dropdown-menu">
+														<li>
+															<div class="row">
+																<div class="col-md-12">
+																	<h4 class="title"><i class="fa fa-laptop pr-10"></i> Demos</h4>
+																	<div class="row">
+																		<div class="col-sm-4">
+																			<div class="divider"></div>
+																			<ul class="menu">
+																				<li data-ui-route="/" data-ng-class="{active: $uiRoute}"><a href="#!/"><i class="icon-suitcase pr-10"></i>Home</a></li>
+																				<li data-ui-route="/about" data-ng-class="{active: $uiRoute}"><a href="#!/about"><i class="icon-suitcase pr-10"></i>About Us</a></li>
+																			</ul>
+																		</div>
+																		<div class="col-sm-4">
+																			<div class="divider"></div>
+																			<ul class="menu">
+																				<li data-ui-route="/services" data-ng-class="{active: $uiRoute}"><a href="#!/services"><i class="icon-briefcase pr-10"></i>Services</a></li>
+																				<li data-ui-route="/contact" data-ng-class="{active: $uiRoute}"><a href="#!/contact"><i class="fa fa-ambulance pr-10"></i>Contact</a></li>
+																			</ul>
+																		</div>
+																		<div class="col-sm-4">
+																			<div class="divider"></div>
+																			<ul class="menu">
+																				<li data-ui-route="/team" data-ng-class="{active: $uiRoute}"><a href="#!/team"><i class="icon-home pr-10"></i>Our Team</a></li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</li>
+													</ul>
+												</li>
+												<!-- mega-menu end -->
+												
+												<!-- mega-menu start -->													
+												<li data-ui-route="/talents" data-ng-class="{active: $uiRoute}" data-ng-if="isAuthorized(userRoles.agency)"><a href="#!/talents">Talents</a></li>
+												<!-- mega-menu end -->
+												
+												<!-- mega-menu end -->
+												<li class="dropdown" data-ng-if="isAuthorized(userRoles.admin)" data-ui-route="/talents" data-ng-class="{active: $uiRoute}">
+													<a href="#!/talents" class="dropdown-toggle" data-toggle="dropdown">Talents</a>
+													<ul class="dropdown-menu">
+														<li data-ui-route="/talents" data-ng-class="{active: $uiRoute}"><a href="#!/talents">Approved <span class="badge">{{ approvedTalentsCount.0 }}</span></a></li>
+														<li data-ui-route="/talents/forApproval" data-ng-class="{active: $uiRoute}"><a href="#!/talents/forApproval">For Approval <span class="badge">{{ forApprovalTalentsCount.0 }}</span></a></li>
+														<li data-ui-route="/talents/denied" data-ng-class="{active: $uiRoute}"><a href="#!/talents/denied">Denied <span class="badge">{{ deniedTalentsCount.0 }}</span></a></li>
+													</ul> 
+												</li>
+												<!-- mega-menu end -->
+												
+												<!-- mega-menu start -->													
+												<li data-ui-route="/events" data-ng-class="{active: $uiRoute}" data-ng-if="isAuthorized(userRoles.user)"><a href="#!/events">Events</a></li>
+												<!-- mega-menu end -->
+												
+												<!-- mega-menu end -->
+												<li class="dropdown" data-ng-if="isAuthorized([userRoles.admin, userRoles.agency])" data-ui-route="/events" data-ng-class="{active: $uiRoute}">
+													<a href="#!/events" class="dropdown-toggle" data-toggle="dropdown">Events</a>
+													<ul class="dropdown-menu">
+														<li data-ui-route="/events" data-ng-class="{active: $uiRoute}"><a href="#!/events">Approved <span class="badge">{{ approvedEventsCount.0 }}</span></a></li>
+														<li data-ui-route="/events/forApproval" data-ng-class="{active: $uiRoute}"><a href="#!/events/forApproval">For Approval <span class="badge">{{ forApprovalEventsCount.0 }}</span></a></li>
+														<li data-ui-route="/events/denied" data-ng-class="{active: $uiRoute}"><a href="#!/events/denied">Denied <span class="badge">{{ deniedEventsCount.0 }}</span></a></li>
+														<li data-ui-route="/events/closed" data-ng-class="{active: $uiRoute}"><a href="#!/events/closed">Closed <span class="badge">{{ closedEventsCount.0 }}</span></a></li>
+													</ul> 
+												</li>
+												<!-- mega-menu end -->
+												
+											</ul>
+											<!-- main-menu end -->											
+										</div>
+
+									</div>
+								</nav>
+								<!-- navbar end -->
+
+							</div>
+							<!-- main-navigation end -->	
+							</div>
+							<!-- header-right end -->
+				
+						</div>
+					</div>
+				</div>
+				
+			</header>
+			<!-- header end -->
+		</div>
+		<!-- header-container end -->
+	
+		<data-ui-view></data-ui-view>
+		
+		<!-- footer top start -->
+		<!-- ================ -->
+		<div class="dark-bg  default-hovered footer-top animated-text" data-ng-if="!isAuthenticated() &amp;&amp; $state.current.name !== 'home'">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="call-to-action text-center">
+							<div class="row">
+								<div class="col-sm-8">
+									<h2>Powerful Talent Management Platform</h2>
+									<h2>Waste no more time</h2>
+								</div>
+								<div class="col-sm-4">
+									<p class="mt-10"><a href="#!/register" class="btn btn-animated btn-lg btn-gray-transparent ">Register<i class="fa fa-user-plus pl-20"></i></a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- footer top end -->
+			
+		<!-- footer start (Add "dark" class to #footer in order to enable dark footer) -->
+		<!-- ================ -->
+		<footer id="footer" class="clearfix ">
+
+			<!-- .footer start -->
+			<!-- ================ -->
+			<div class="footer">
+				<div class="container">
+					<div class="footer-inner">
+						<div class="row">
+							<div class="col-md-3">
+								<div class="footer-content">
+									<div class="logo-footer"><img id="logo-footer" src="/images/logo_light_blue.png" alt="" /></div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus illo vel dolorum soluta consectetur doloribus sit. Delectus non tenetur odit dicta vitae debitis suscipit doloribus. Ipsa, aut voluptas quaerat... <a href="page-about.html">Learn More<i class="fa fa-long-arrow-right pl-5"></i></a></p>
+									<div class="separator-2"></div>
+									<nav>
+										<ul class="nav nav-pills nav-stacked">
+											<li><a target="_blank" href="#!/">Support</a></li>
+											<li><a href="#!/">Privacy</a></li>
+											<li><a href="#!/">Terms</a></li>
+											<li><a href="#!/about">About</a></li>
+										</ul>
+									</nav>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="footer-content">
+									<h2 class="title">Latest From Blog</h2>
+									<div class="separator-2"></div>
+									<div class="media margin-clear">
+										<div class="media-left">
+											<div class="overlay-container">
+												<img class="media-object" src="/images/blog-thumb-1.jpg" alt="blog-thumb" />
+												<a href="blog-post.html" class="overlay-link small"><i class="fa fa-link"></i></a>
+											</div>
+										</div>
+										<div class="media-body">
+											<h6 class="media-heading"><a href="blog-post.html">Lorem ipsum dolor sit amet...</a></h6>
+											<p class="small margin-clear"><i class="fa fa-calendar pr-10"></i>Mar 23, 2015</p>
+										</div>
+										<hr />
+									</div>
+									<div class="media margin-clear">
+										<div class="media-left">
+											<div class="overlay-container">
+												<img class="media-object" src="/images/blog-thumb-2.jpg" alt="blog-thumb" />
+												<a href="blog-post.html" class="overlay-link small"><i class="fa fa-link"></i></a>
+											</div>
+										</div>
+										<div class="media-body">
+											<h6 class="media-heading"><a href="blog-post.html">Lorem ipsum dolor sit amet...</a></h6>
+											<p class="small margin-clear"><i class="fa fa-calendar pr-10"></i>Mar 22, 2015</p>
+										</div>
+										<hr />
+									</div>
+									<div class="media margin-clear">
+										<div class="media-left">
+											<div class="overlay-container">
+												<img class="media-object" src="/images/blog-thumb-3.jpg" alt="blog-thumb" />
+												<a href="blog-post.html" class="overlay-link small"><i class="fa fa-link"></i></a>
+											</div>
+										</div>
+										<div class="media-body">
+											<h6 class="media-heading"><a href="blog-post.html">Lorem ipsum dolor sit amet...</a></h6>
+											<p class="small margin-clear"><i class="fa fa-calendar pr-10"></i>Mar 21, 2015</p>
+										</div>
+										<hr />
+									</div>
+									<div class="media margin-clear">
+										<div class="media-left">
+											<div class="overlay-container">
+												<img class="media-object" src="/images/blog-thumb-4.jpg" alt="blog-thumb" />
+												<a href="blog-post.html" class="overlay-link small"><i class="fa fa-link"></i></a>
+											</div>
+										</div>
+										<div class="media-body">
+											<h6 class="media-heading"><a href="blog-post.html">Lorem ipsum dolor sit amet...</a></h6>
+											<p class="small margin-clear"><i class="fa fa-calendar pr-10"></i>Mar 21, 2015</p>
+										</div>
+									</div>
+									<div class="text-right space-top">
+										<a href="blog-large-image-right-sidebar.html" class="link-dark"><i class="fa fa-plus-circle pl-5 pr-5"></i>More</a>	
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="footer-content">
+									<h2 class="title">Portfolio Gallery</h2>
+									<div class="separator-2"></div>
+									<div class="row grid-space-10">
+										<div class="col-xs-4 col-md-6">
+											<div class="overlay-container mb-10">
+												<img src="/images/gallery-1.jpg" alt="" />
+												<a href="portfolio-item.html" class="overlay-link small">
+													<i class="fa fa-link"></i>
+												</a>
+											</div>
+										</div>
+										<div class="col-xs-4 col-md-6">
+											<div class="overlay-container mb-10">
+												<img src="/images/gallery-2.jpg" alt="" />
+												<a href="portfolio-item.html" class="overlay-link small">
+													<i class="fa fa-link"></i>
+												</a>
+											</div>
+										</div>
+										<div class="col-xs-4 col-md-6">
+											<div class="overlay-container mb-10">
+												<img src="/images/gallery-3.jpg" alt="" />
+												<a href="portfolio-item.html" class="overlay-link small">
+													<i class="fa fa-link"></i>
+												</a>
+											</div>
+										</div>
+										<div class="col-xs-4 col-md-6">
+											<div class="overlay-container mb-10">
+												<img src="/images/gallery-4.jpg" alt="" />
+												<a href="portfolio-item.html" class="overlay-link small">
+													<i class="fa fa-link"></i>
+												</a>
+											</div>
+										</div>
+										<div class="col-xs-4 col-md-6">
+											<div class="overlay-container mb-10">
+												<img src="/images/gallery-5.jpg" alt="" />
+												<a href="portfolio-item.html" class="overlay-link small">
+													<i class="fa fa-link"></i>
+												</a>
+											</div>
+										</div>
+										<div class="col-xs-4 col-md-6">
+											<div class="overlay-container mb-10">
+												<img src="/images/gallery-6.jpg" alt="" />
+												<a href="portfolio-item.html" class="overlay-link small">
+													<i class="fa fa-link"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="text-right space-top">
+										<a href="portfolio-grid-2-3-col.html" class="link-dark"><i class="fa fa-plus-circle pl-5 pr-5"></i>More</a>	
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="footer-content">
+									<h2 class="title">Find Us</h2>
+									<div class="separator-2"></div>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium odio voluptatem necessitatibus illo vel dolorum soluta.</p>
+									<ul class="social-links circle animated-effect-1">
+										<li class="facebook"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+										<li class="twitter"><a target="_blank" href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
+										<li class="googleplus"><a target="_blank" href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
+										<li class="linkedin"><a target="_blank" href="http://www.linkedin.com"><i class="fa fa-linkedin"></i></a></li>
+										<li class="xing"><a target="_blank" href="http://www.xing.com"><i class="fa fa-xing"></i></a></li>
+									</ul>
+									<div class="separator-2"></div>
+									<ul class="list-icons">
+										<li><i class="fa fa-map-marker pr-10 text-default"></i> Norma St. B. Balic, Sampaloc, Manila, 1008</li>
+										<li><i class="fa fa-phone pr-10 text-default"></i> +63 927 474 2769</li>
+										<li><a href="mailto:mhaj_saleh@yahoo.com"><i class="fa fa-envelope-o pr-10"></i>mhaj_saleh@yahoo.com</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- .footer end -->
+
+			<!-- .subfooter start -->
+			<!-- ================ -->
+			<div class="subfooter">
+				<div class="container">
+					<div class="subfooter-inner">
+						<div class="row">
+							<div class="col-md-12">
+								<p class="text-center">Copyright &copy; 2015 Mahha Saleh by GeeksException. All Rights Reserved</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- .subfooter end -->
+
+		</footer>
+		<!-- footer end -->
+		
+	</div>
+	<!-- page-wrapper end -->
+
+	<!-- JavaScript files placed at the end of the document so the pages load faster -->
+	<!-- ================================================== -->
+	<!-- Jquery and Bootstap core js files -->
+	<script type="text/javascript" src="/plugins/jquery.min.js"></script>
+	<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- Modernizr javascript -->
+	<script type="text/javascript" src="/plugins/modernizr.js"></script>
+
+	<!-- jQuery Revolution Slider  -->
+	<script type="text/javascript" src="/plugins/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+	<script type="text/javascript" src="/plugins/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+	<!-- Isotope javascript -->
+	<script type="text/javascript" src="/plugins/isotope/isotope.pkgd.min.js"></script>
+	
+	<!-- Magnific Popup javascript -->
+	<script type="text/javascript" src="/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+	
+	<!-- Appear javascript -->
+	<script type="text/javascript" src="/plugins/waypoints/jquery.waypoints.min.js"></script>
+
+	<!-- Count To javascript -->
+	<script type="text/javascript" src="/plugins/jquery.countTo.js"></script>
+	
+	<!-- Parallax javascript -->
+	<script src="/plugins/jquery.parallax-1.1.3.js"></script>
+
+	<!-- Contact form -->
+	<script src="/plugins/jquery.validate.js"></script>
+
+	<!-- Background Video -->
+	<script src="/plugins/vide/jquery.vide.js"></script>
+
+	<!-- Owl carousel javascript -->
+	<script type="text/javascript" src="/plugins/owl-carousel/owl.carousel.js"></script>
+	
+	<!-- SmoothScroll javascript -->
+	<script type="text/javascript" src="/plugins/jquery.browser.js"></script>
+	<script type="text/javascript" src="/plugins/SmoothScroll.js"></script>
+	
+	<!-- Pace javascript -->
+	<script type="text/javascript" src="plugins/pace/pace.min.js"></script>
+	
+	<!-- Initialization of Plugins -->
+	<script type="text/javascript" src="/js/template.js"></script>
+
+	<!-- Custom Scripts -->
+	<script type="text/javascript" src="/js/custom.js"></script>
+	<!-- Color Switcher (Remove these lines) -->
+	<script type="text/javascript" src="/style-switcher/style-switcher.js"></script>
+	<div class="style-switcher closed">
+		<div class="header">
+			<a class="trigger" href="#"><i class="icon-cog-1"></i></a>
+			<h2>Style Switcher</h2>
+		</div>
+		<div class="clearfix body">
+			<h3>Predifined Colors</h3>
+			<ul class="styleChange">
+				<li class="light-blue selected" data-style="light_blue" title="light_blue"></li>
+				<li class="blue" data-style="blue" title="blue"></li>
+				<li class="green" data-style="green" title="green"></li>
+				<li class="dark-cyan" data-style="dark_cyan" title="dark_cyan"></li>
+				<li class="brown" data-style="brown" title="brown"></li>
+				<li class="dark-red" data-style="dark_red" title="dark_red"></li>
+				<li class="gold" data-style="gold" title="gold"></li>
+				<li class="gray" data-style="gray" title="gray"></li>
+				<li class="cool-green" data-style="cool_green" title="cool_green"></li>
+				<li class="pink" data-style="pink" title="pink"></li>
+				<li class="purple" data-style="purple" title="purple"></li>
+				<li class="orange" data-style="orange" title="orange"></li>
+				<li class="red" data-style="red" title="red"></li>
+				<li class="vivid-red" data-style="vivid_red" title="vivid_red"></li>
+			</ul>
+			<hr />
+			<h3>Layout Mode</h3>
+			<ul class="layoutChange">
+				<li class="wide selected" data-style="wide" title="wide"><i class="fa fa-arrow-left pr-10"></i>Wide<i class="fa fa-arrow-right pl-10"></i></li>
+				<li class="boxed" data-style="boxed" title="boxed"><i class="fa fa-arrow-right pr-5"></i>Boxed<i class="fa fa-arrow-left pl-5"></i></li>
+			</ul>
+			<h3>Patterns</h3>
+			<ul class="patternChange">
+				<li class="pattern-0" data-style="pattern-0" title="white background"></li>
+				<li class="pattern-1" data-style="pattern-1" title="pattern-1"></li>
+				<li class="pattern-2" data-style="pattern-2" title="pattern-2"></li>
+				<li class="pattern-3" data-style="pattern-3" title="pattern-3"></li>
+				<li class="pattern-4" data-style="pattern-4" title="pattern-4"></li>
+				<li class="pattern-5" data-style="pattern-5" title="pattern-5"></li>
+				<li class="pattern-6" data-style="pattern-6" title="pattern-6"></li>
+				<li class="pattern-7" data-style="pattern-7" title="pattern-7"></li>
+				<li class="pattern-8" data-style="pattern-8" title="pattern-8"></li>
+				<li class="pattern-9" data-style="pattern-9" title="pattern-9"></li>
+			</ul>
+			<ul class="resetAll">
+				<li class="btn btn-default btn-sm" title="Reset"><a href="../index.html">Demos</a></li>
+				<li class="btn btn-dark btn-sm" title="Reset">Reset All</li>
+			</ul>
+		</div>
+	</div>
+	<!-- Color Switcher End -->
+	
+	<!-- AngularJS JavaScript -->
+	<script src="../../js/angular.min.js" th:src="@{/js/angular.min.js}" type="text/javascript"></script>
+	<script src="../../js/angular-ui-router.min.js" th:src="@{/js/angular-ui-router.min.js}" type="text/javascript"></script>
+	<script src="../../js/angular-resource.min.js" th:src="@{/js/angular-resource.min.js}" type="text/javascript"></script>
+	<script src="../../js/angular-animate.min.js" th:src="@{/js/angular-animate.min.js}" type="text/javascript"></script>
+	<script src="../../js/angular-cookies.min.js" th:src="@{/js/angular-cookies.min.js}" type="text/javascript"></script>
+	<script src="../../js/ui-utils.min.js" th:src="@{/js/ui-utils.min.js}" type="text/javascript"></script>
+	
+	<!-- Bootstrap Fileinput JavaScript -->
+	<script src="../../js/fileinput.min.js" th:src="@{/js/fileinput.min.js}" type="text/javascript"></script>
+	
+	<!-- Angular reCaptcha JavaScript -->
+	<script th:src="@{https://www.google.com/recaptcha/api.js(onload='vcRecaptchaApiLoaded',render='explicit')}" async="async" defer="defer"></script>
+	<script src="../../js/angular-recaptcha.min.js" th:src="@{/js/angular-recaptcha.min.js}" type="text/javascript"></script>
+	
+	<!-- Bootstrap Datepicker JavaScript -->
+	<script src="../../js/bootstrap-datepicker.min.js" th:src="@{/js/bootstrap-datepicker.min.js}" type="text/javascript"></script>
+	
+	<!-- Bootstrap Typeahead JavaScript -->
+	<script src="../../js/bootstrap-tokenfield.min.js" th:src="@{/js/bootstrap-tokenfield.min.js}" type="text/javascript"></script>
+	<script src="../../js/typeahead.bundle.min.js" th:src="@{/js/typeahead.bundle.min.js}" type="text/javascript"></script>
+	
+	<!-- AngularJS JavaScript -->
+	<script src="../../js/application.js" th:src="@{/js/application.js}" type="text/javascript"></script>
+	<script src="../../js/services.js" th:src="@{/js/services.js}" type="text/javascript"></script>
+	<script src="../../js/controllers.js" th:src="@{/js/controllers.js}" type="text/javascript"></script>
+	<script src="../../js/filters.js" th:src="@{/js/filters.js}" type="text/javascript"></script>
+	<script src="../../js/directives.js" th:src="@{/js/directives.js}" type="text/javascript"></script>
+	</body>
+</html>

@@ -7,7 +7,7 @@ var controllers = angular.module('CatalogControllers', []);
 controllers.controller('ApplicationController', ['$scope', '$state', 'Car', 'Header', 'Section', 'AutoPart', 'Attribute', 'CarService', 'HeaderService',
 	function($scope, $state, Car, Header, Section, AutoPart, Attribute, CarService, HeaderService) {
 	
-		Car.query(function(cars) {
+		/*Car.query(function(cars) {
 			CarService.setCars(cars);
 			console.log("%cCarManager#findAllCars: %O", "color: green", cars);
 		});
@@ -51,26 +51,12 @@ controllers.controller('ApplicationController', ['$scope', '$state', 'Car', 'Hea
 		
 		Attribute.findDefaultAttributesOfSection({ id: 4 }, function(defaultAttributesOfSection) {
 			console.log("%cAttributeManager#findDefaultAttributesOfSection: %O", "color: green", defaultAttributesOfSection);
-		});
+		});*/
 		
-	}
-]);
-
-controllers.controller('HeaderController', ['$scope', '$rootScope', 'CarService',
-	function($scope, $rootScope, CarService) {
-  		
-  	}
-]);
-
-controllers.controller('HomeController', ['$scope', '$rootScope', '$state', 'Car', 'CarService',
-    function($scope, $rootScope, $state, Car, CarService) {
-		if(CarService.getCar()) {
-			$scope.car = CarService.getCar();
-			$scope.removeCar = function removeCar() {
-				$scope.car = null;
-				CarService.destroyCar();
-			};
-		}
+		$scope.removeCar = function removeCar() {
+			$scope.car = null;
+			CarService.destroyCar();
+		};
 		
 		Car.query(function(cars) {
 			CarService.setCars(cars);
@@ -127,16 +113,31 @@ controllers.controller('HomeController', ['$scope', '$rootScope', '$state', 'Car
 					Car.get({ year: year, make: make, model: model, submodel: submodel, engine: engine }, function(car) {
 						console.log("%cCarManager#findCar: %O", "color: green", car);
 						CarService.setCar(car);
+						$scope.car = car;
 						$state.go("autoPartsSections");
+						$scope.year = "";
+						$scope.make = "";
+						$scope.model = "";
+						$scope.submodel = "";
+						$scope.engine = "";
 					});
 				}
 			};
 			
-			$scope.showAutoPartsSection = function showAutoPartsSection() {
-				$state.go("autoPartsSections");
-			};
-			
 		});
+		
+	}
+]);
+
+controllers.controller('HeaderController', ['$scope', '$rootScope', 'CarService',
+	function($scope, $rootScope, CarService) {
+  		
+  	}
+]);
+
+controllers.controller('HomeController', ['$scope', '$state', 'Car', 'CarService',
+    function($scope, $state, Car, CarService) {
+		
 	}
 ]);
 

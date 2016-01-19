@@ -5,8 +5,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -17,10 +17,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.geeksexception.project.catalog.enums.AutoPartStatus;
@@ -50,10 +52,6 @@ public class AutoPart implements Serializable {
 	@Column(name = "STATUS", nullable = false)
 	private AutoPartStatus status;
 	
-	@Column(name = "QUANTITY", nullable = false)
-	@NotNull(message = "Quantity must not be null")
-	private Integer quantity;
-	
 	@Column(name = "LIST_PRICE", nullable = true)
 	private BigDecimal listPrice;
 	
@@ -75,15 +73,14 @@ public class AutoPart implements Serializable {
 	@Fetch(FetchMode.JOIN)
 	private List<Attribute> attributes;
 	
-	@ElementCollection
-	@Column(name = "FILE_LOCATION")
-	private List<String> imageFileNames;
-	
 	@ManyToMany
 	@JoinTable(name = "AUTO_PART_CARS", 
 		joinColumns = {@JoinColumn(name="AUTO_PART_ID")},
 		inverseJoinColumns = {@JoinColumn(name="CAR_ID")})
 	private List<Car> compatibleCars;
+	
+	@OneToMany(mappedBy = "autoPart", cascade = CascadeType.ALL)
+	private @Valid List<Image> images;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "DATE_ADDED", nullable = false)
@@ -132,14 +129,6 @@ public class AutoPart implements Serializable {
 		this.status = status;
 	}
 
-	public Integer getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
-	}
-
 	public BigDecimal getListPrice() {
 		return listPrice;
 	}
@@ -180,20 +169,20 @@ public class AutoPart implements Serializable {
 		this.attributes = attributes;
 	}
 
-	public List<String> getImageFileNames() {
-		return imageFileNames;
-	}
-
-	public void setImageFileNames(List<String> imageFileNames) {
-		this.imageFileNames = imageFileNames;
-	}
-
 	public List<Car> getCompatibleCars() {
 		return compatibleCars;
 	}
 
 	public void setCompatibleCars(List<Car> compatibleCars) {
 		this.compatibleCars = compatibleCars;
+	}
+
+	public List<Image> getImages() {
+		return images;
+	}
+
+	public void setImages(List<Image> images) {
+		this.images = images;
 	}
 
 	public Date getDateAdded() {

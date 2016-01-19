@@ -29,7 +29,6 @@ public class AutoPartServiceImpl implements AutoPartService {
 		
 		logger.debug("({})", autoPart);
 		
-		// TODO: Implement adding of quantity if name and attributes are equal
 		return autoPartRepository.save(autoPart);
 		
 	}

@@ -49,7 +49,7 @@ services.factory('Attribute', ['$resource',
  	}
  ]);
 
-services.factory('AuthService', ['Session',
+/*services.factory('AuthService', ['Session',
 	function (Session) {
 		var authService = {};
 
@@ -80,7 +80,7 @@ services.service('Session',
 
 		return this;
 	}
-);
+);*/
 
 services.service('CarService',
 	function() {

@@ -19,12 +19,13 @@ public class DevelopmentWebMvcConfig extends AbstractWebMvcConfig {
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/css/**").addResourceLocations("/css/");
-		registry.addResourceHandler("/dist/**").addResourceLocations("/dist/");
-		registry.addResourceHandler("/sitemap/**").addResourceLocations("/sitemap/");
-		registry.addResourceHandler("/img/**").addResourceLocations("/img/");
+		registry.addResourceHandler("/js/**").addResourceLocations("/js/");
+		registry.addResourceHandler("/plugins/**").addResourceLocations("/plugins/");
+		registry.addResourceHandler("/bootstrap/**").addResourceLocations("/bootstrap/");
+		registry.addResourceHandler("/images/**").addResourceLocations("/images/");
 		registry.addResourceHandler("/fonts/**").addResourceLocations("/fonts/");
 		registry.addResourceHandler("/templates/**").addResourceLocations("/templates/");
-		registry.addResourceHandler("/js/**").addResourceLocations("/js/");
+		registry.addResourceHandler("/style-switcher/**").addResourceLocations("/style-switcher/");
 	}
 	
 }
